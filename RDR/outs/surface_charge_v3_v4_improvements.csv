@@ -1,0 +1,19 @@
+code,display,v3_charge,v4_charge,v4_conf,v4_prov,ligand_type,ligand_charge,surface_material
+C116890,Nanoparticle Albumin-bound Thiocolchicine Dimer nab-5404,unknown,negative,0.6174999999999999,propagated_from_ligand:albumin:explicit,albumin,negative,albumin
+C124053,Bendamustine-containing Nanoparticle-based Formulation RXDX-107,unknown,negative,0.6174999999999999,propagated_from_ligand:albumin:explicit,albumin,negative,albumin
+C131213,Nab-paclitaxel/Rituximab-coated Nanoparticle AR160,unknown,neutral,0.57,propagated_from_ligand:antibody:explicit,antibody,neutral,antibody
+C136981,Anti-EphA2 Antibody-directed Liposomal Docetaxel Prodrug MM-310,unknown,neutral,0.57,propagated_from_ligand:antibody:explicit,antibody,neutral,antibody
+C147562,Synthetic Vaccine Particles-Rapamycin,unknown,neutral,0.51,inferred_from_surface_material:antibody,antibody,neutral,antibody
+C148522,HAAH Lambda phage Vaccine SNS-301,unknown,neutral,0.51,inferred_from_surface_material:antibody,antibody,neutral,antibody
+C158083,Cetuximab-loaded Ethylcellulose Polymeric Nanoparticles Decorated with Octreotide,unknown,neutral,0.57,propagated_from_ligand:antibody:explicit,antibody,neutral,antibody
+C159408,Atezolizumab/Nab-paclitaxel Regimen,unknown,negative,0.6174999999999999,propagated_from_ligand:albumin:explicit,albumin,negative,albumin
+C166389,Atezolizumab/Carboplatin/Nab-paclitaxel Regimen,unknown,negative,0.6174999999999999,propagated_from_ligand:albumin:explicit,albumin,negative,albumin
+C179620,mRNA-encoded Anti-Claudin18.2 Monoclonal Antibody BNT141,unknown,neutral,0.51,inferred_from_surface_material:antibody,antibody,neutral,antibody
+C180674,CD122-selective IL-2/Anti-CD25 Antibody-like Fusion Protein ANV419,unknown,neutral,0.57,propagated_from_ligand:antibody:explicit,antibody,neutral,antibody
+C187124,mRNA-encoded Anti-CD3/Anti-CLDN6 Bispecific Antibody BNT142,unknown,neutral,0.57,propagated_from_ligand:antibody:explicit,antibody,neutral,antibody
+C190739,Nab-paclitaxel/Danburstotug Complex AP160,unknown,neutral,0.57,propagated_from_ligand:antibody:explicit,antibody,neutral,antibody
+C2688,Nab-paclitaxel,unknown,negative,0.6174999999999999,propagated_from_ligand:albumin:explicit,albumin,negative,albumin
+C71696,Nanoparticle Albumin-Bound Docetaxel,unknown,negative,0.6174999999999999,propagated_from_ligand:albumin:explicit,albumin,negative,albumin
+C74065,Sirolimus Albumin-bound Nanoparticles,unknown,negative,0.6174999999999999,propagated_from_ligand:albumin:explicit,albumin,negative,albumin
+C82676,Irinotecan Sucrosofate,unknown,neutral,0.595,inferred_from_surface_material:polymer-peg,polymer-peg,neutral,peg
+C82691,Hsp90 Inhibitor AB-010,unknown,negative,0.6174999999999999,propagated_from_ligand:albumin:explicit,albumin,negative,albumin

@@ -1,0 +1,659 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14/"
+     xml:base="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-14="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasActiveIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasActiveIngredient"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasAdministrationRoute -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasAdministrationRoute"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasCarrierType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasCarrierType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasParent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasParent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasSemanticType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasSemanticType">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#targetsProtein -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#targetsProtein"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasCode"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasDefinition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasDefinition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasDisplayName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasDisplayName"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasSubsetTerminology -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasSubsetTerminology"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasSynonym -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#hasSynonym"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Antineoplastic_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Antineoplastic_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Therapeutic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#CT_Imaging_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#CT_Imaging_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Imaging_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Carrier_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Carrier_System"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Checkpoint_Inhibitor_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Checkpoint_Inhibitor_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Immunotherapeutic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Chemotherapeutic_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Chemotherapeutic_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Antineoplastic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Contrast_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Contrast_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Diagnostic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Cytokine_Therapy_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Cytokine_Therapy_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Immunotherapeutic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Diagnostic_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Diagnostic_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Nanoparticle_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Diagnostic_Reagent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Diagnostic_Reagent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Diagnostic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Fluorescent_Imaging_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Fluorescent_Imaging_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Imaging_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Gene_Therapy_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Gene_Therapy_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Antineoplastic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Imaging_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Imaging_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Diagnostic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Immunotherapeutic_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Immunotherapeutic_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Therapeutic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#MRI_Contrast_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#MRI_Contrast_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Imaging_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Metallic_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Metallic_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Carrier_System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Nanoparticle_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Nanoparticle_Agent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Other_Therapeutic_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Other_Therapeutic_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Therapeutic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#PET_Imaging_Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#PET_Imaging_Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Imaging_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Polymeric_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Polymeric_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Carrier_System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Targeted_Therapy_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Targeted_Therapy_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Antineoplastic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Theranostic_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Theranostic_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Nanoparticle_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Therapeutic_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Therapeutic_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Nanoparticle_Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Vaccine_Nanoparticle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Vaccine_Nanoparticle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Immunotherapeutic_Nanoparticle"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Activity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Activity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Albumin_Bound -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Albumin_Bound">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Carrier_System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Amino_Acid_Peptide_Protein -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Amino_Acid_Peptide_Protein">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#C102875 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#C102875">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Antineoplastic_Nanoparticle"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Chemotherapeutic_Nanoparticle"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Nanoparticle_Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Therapeutic_Nanoparticle"/>
+        <untitled-ontology-14:hasCarrierType rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Liposomal"/>
+        <untitled-ontology-14:hasSemanticType rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Pharmacologic_Substance"/>
+        <untitled-ontology-14:hasCode>C102875</untitled-ontology-14:hasCode>
+        <untitled-ontology-14:hasDefinition>A formulation of nanoparticles encapsulating the hydrochloride salt form of the anthracycline antibiotic doxorubicin, with potential antitumor activity. Upon intravenous administration, doxorubicin intercalates DNA, interferes with the activity of topoisomerase II, and causes DNA adducts and other DNA damage, resulting in tumor cell growth inhibition and apoptosis. This agent also interacts with cell membrane lipids causing lipid peroxidation. Delivery of doxorubicin in nanoparticles may improve drug penetration into tumors and may circumvent the tumor cells multidrug resistance mechanisms and may therefore be effective in chemoresistant tumor cells.</untitled-ontology-14:hasDefinition>
+        <untitled-ontology-14:hasDisplayName>Nanoparticle-encapsulated Doxorubicin Hydrochloride</untitled-ontology-14:hasDisplayName>
+        <untitled-ontology-14:hasSynonym>BA-003</untitled-ontology-14:hasSynonym>
+        <untitled-ontology-14:hasSynonym>Doxorubicin Transdrug</untitled-ontology-14:hasSynonym>
+        <untitled-ontology-14:hasSynonym>Livatag</untitled-ontology-14:hasSynonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#CD20 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#CD20">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Cell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Cell">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Chemical_Viewed_Structurally -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Chemical_Viewed_Structurally">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Classification -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Classification">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Conceptual_Entity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Conceptual_Entity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Cytokine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Cytokine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#EGFR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#EGFR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Gold -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Gold">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Metallic_Nanoparticle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#HER2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#HER2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Immunologic_Factor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Immunologic_Factor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Indicator_Reagent_Diagnostic_Aid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Indicator_Reagent_Diagnostic_Aid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Inorganic_Chemical -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Inorganic_Chemical">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Integrin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Integrin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Intramuscular -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Intramuscular">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Intraperitoneal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Intraperitoneal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Intratumoral -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Intratumoral">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Intravenous -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Intravenous">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Iron_Oxide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Iron_Oxide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Metallic_Nanoparticle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Lipid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Lipid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Carrier_System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Liposomal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Liposomal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Carrier_System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Manufactured_Object -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Manufactured_Object">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Nucleic_Acid_Nucleoside_Nucleotide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Nucleic_Acid_Nucleoside_Nucleotide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Oral -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Oral">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Organic_Chemical -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Organic_Chemical">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Organization -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Organization">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#PLGA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#PLGA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Polymeric_Nanoparticle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#PSMA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#PSMA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Pharmacologic_Substance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Pharmacologic_Substance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Physical_Object -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Physical_Object">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Polymeric -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Polymeric">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Polymeric_Nanoparticle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Silica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Silica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Carrier_System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Silver -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Silver">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Metallic_Nanoparticle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Subcutaneous -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Subcutaneous">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#TLR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#TLR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Target_Molecule"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Therapeutic_Preventive_Procedure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Therapeutic_Preventive_Procedure">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Semantic_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Topical -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Topical">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2025/9/untitled-ontology-14#Administration_Route"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
