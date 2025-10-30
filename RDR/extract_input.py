@@ -253,7 +253,7 @@ def infer_np_type(display_name: str, synonyms: str, definition: str) -> Tuple[st
         try:
             return re.search(pattern, text, flags=re.IGNORECASE) is not None
         except re.error:
-            # fallback simple
+            # alternativa sencilla si la expresión regular falla
             return t.lower() in text.lower()
 
     # iterar por categorías y niveles (prioridad high -> medium -> low)
@@ -303,7 +303,7 @@ def infer_np_type(display_name: str, synonyms: str, definition: str) -> Tuple[st
 
 
 # Precompilados y patrones para inferencia de carga
-# Regex refinado para zeta potential (evita falsos positivos con códigos de producto)
+# Regex refinado para zeta potential (evita falsos positivos con códigos de producto) - NO APARECE EN EL TESAURO DE NCIt
 _ZETA_RE = re.compile(r"zeta\s*potential[^.,]{0,30}?([+\-]\d+(?:[.,]\d+)?)\s*m?v\b", flags=re.IGNORECASE)
 _HIGH_POS_RE = re.compile(r"\b(cationic|positively\s*charged|positive\s*charge|\+\s?charge)\b", flags=re.IGNORECASE)
 _HIGH_NEG_RE = re.compile(r"\b(anionic|negatively\s*charged|negative\s*charge|\-\s?charge)\b", flags=re.IGNORECASE)
@@ -350,7 +350,7 @@ _LIGAND_CATIONIC_RE = re.compile(r"\b(cationic|positively charged|\+ charge|cati
 _LIGAND_ANIONIC_RE = re.compile(r"\b(anionic|negatively charged|\- charge|carboxylate|sulfate|sulfonate|phosphate)\b", re.IGNORECASE)
 _LIGAND_ZWITTERIONIC_RE = re.compile(r"\b(zwitterionic)\b", re.IGNORECASE)
 
-# biomolecule patterns
+# patrones de biomoléculas
 _DNA_RE = re.compile(r"\b(dna|plasmid|oligonucleotide|oligo)\b", re.IGNORECASE)
 _RNA_RE = re.compile(r"\b(rna|mrna|sirna|mirna|trna|rrna|microrna)\b", re.IGNORECASE)
 _PROTEIN_RE = re.compile(r"\b(protein|peptide|enzyme|antibody|immunoglobulin|mab|cytokine)\b", re.IGNORECASE)
@@ -386,27 +386,27 @@ def infer_charge(display_name: str, definition: str, concept_subset: str) -> Tup
         except ValueError:
             zeta_result = None
 
-    # 2) High-confidence textual cues
+    # 2) Señales directas en el texto
     text_pos = bool(_HIGH_POS_RE.search(s))
     text_neg = bool(_HIGH_NEG_RE.search(s))
 
-    # 3) Cationic lipids (high confidence for positive charge)
+    # 3) Lípidos catiónicos (confianza alta para carga positiva)
     cationic_lipid = bool(_CATIONIC_LIPID_RE.search(s))
     
-    # 4) Amine-functionalized surfaces (medium-high confidence for positive charge)
+    # 4) Superficie funcionalizada con aminas (confianza media-alta para carga positiva)
     amine_functionalized = bool(_AMINE_FUNCTIONALIZED_RE.search(s))
 
-    # 5) Chemical-group inferred cues (medium confidence)
+    # 5) Señales inferidas por grupos químicos (confianza media)
     chem_pos = any(p.search(s) for p in _POS_CHEM_PATTERNS)
     chem_neg = any(p.search(s) for p in _NEG_CHEM_PATTERNS)
 
-    # 6) Low-confidence cues
+    # 6) Señales de confianza baja para neutralidad
     low_neutral = any(re.search(r"\b" + re.escape(k) + r"\b", s) for k in ["zwitterionic", "neutral", "uncharged"])
-    
-    # 7) PEG-specific neutral signal (medium-high confidence)
+
+    # 7) Señal neutral específica de PEG (confianza media-alta)
     peg_detected = _PEG_RE.search(s)
 
-    # Resolve conflicts and combine evidence
+    # Resolver conflictos y combinar evidencias
     evidences = []
     if text_pos:
         evidences.append(("positive", 0.95, "keywords"))
@@ -428,10 +428,9 @@ def infer_charge(display_name: str, definition: str, concept_subset: str) -> Tup
     if zeta_result:
         evidences.append(zeta_result)
 
-    # Resolve conflicts with neutral vs charged: prefer a charged evidence
-    # if there is a high-confidence charged signal (>= 0.9). This handles
-    # cases like "positive PEGylated micelles..." where a neutral cue (peg)
-    # appears together with a strong charged cue.
+    # Resolver conflictos con neutral vs cargado: preferir evidencia cargada
+    # Si hay una señal cargada de alta confianza (>= 0.9). Trata casos como "positive PEGylated micelles..." 
+    # donde una señal neutral (peg) aparece junto con una señal cargada fuerte.
     signs = set(e[0] for e in evidences)
     if "neutral" in signs and ("positive" in signs or "negative" in signs):
         high = [e for e in evidences if e[1] >= 0.9]
@@ -440,23 +439,23 @@ def infer_charge(display_name: str, definition: str, concept_subset: str) -> Tup
             best = max(high, key=lambda x: x[1])
             return best
 
-    # If conflicting strong evidences exist, mark ambiguous
+    # Si hay evidencias conflictivas, marcar como ambigua
     if "positive" in signs and "negative" in signs:
         provs = ",".join(sorted({e[2] for e in evidences}))
         return "ambiguous", 0.0, f"conflict:{provs}"
 
-    # If any evidence exists and not ambiguous, pick strongest and boost when concordant
+    # Si existe alguna evidencia y no es ambigua, escoger la de mayor confianza y aumentar si hay concordancia
     if evidences:
-        # choose evidence with highest confidence
+        # elegir evidencia con mayor confianza
         best = max(evidences, key=lambda x: x[1])
         label, base_conf, prov = best
-        # boost if textual+parametric agree
+        # boostear si textual+parametric coinciden
         if zeta_result and label == zeta_result[0] and base_conf < 0.99:
             base_conf = min(0.99, base_conf + 0.05)
             prov = prov + ",parametric:zeta"
         return label, base_conf, prov
 
-    # fallback
+    # alternativa por defecto
     return "unknown", 0.0, "none"
 
 # ──────────────────────────────────────────────────────────────
@@ -506,7 +505,7 @@ def infer_surface_charge(
     ligand_info: Dict[str, Any],
     surf_material: str
 ) -> Tuple[str, float, str]:
-    """Encapsula la lógica de decisión de la carga de la 'surface'.
+    """Encapsula la lógica de decisión de la carga de la superficie.
 
     Prioridad:
     1) Si hay contexto de sustrato explícito -> usar infer_substrate_charge
@@ -524,7 +523,7 @@ def infer_surface_charge(
     if np_charge and np_charge != "unknown":
         return np_charge, np_charge_conf, f"propagated_from_nanoparticle:{np_charge_src}"
 
-    # 3) propagar desde ligando cuando hay funcionalización explícita (alta confianza)
+    # 3) propagar desde ligando cuando hay funcionalización explícita (alta confianza) - VERSIÓN 4
     s_combined = _combine(display_name, synonyms, definition)
     if ligand_info.get("charge") not in (None, "", "unknown") \
        and ligand_info.get("charge_confidence", 0.0) >= 0.60:
@@ -556,14 +555,14 @@ def infer_surface_charge(
     return "unknown", 0.0, "propagated_from_nanoparticle:none"
 
 
-# TODO: consistencia carga ligando <-> carga superficie
+# TODO: consistencia carga ligando <-> carga superficie - PARA VERSIÓN 5?
 def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -> Dict[str, Any]:
     s = _combine(display_name, synonyms, definition)
     type = {"type": "unknown", "type_confidence": 0.0, "type_provenance": "none"}
     polarity = {"polarity": "unknown", "polarity_confidence": 0.0, "polarity_provenance": "none"}
     charge = {"charge": "unknown", "charge_confidence": 0.0, "charge_provenance": "none"}
 
-    # --- Tipos comunes de ligando en nanoterapia (usar patrones precompilados) ---
+    # Tipos comunes de ligando en nanoterapia
     if _ANTIBODY_RE.search(s):
         type["type"], type["type_confidence"], type["type_provenance"] = "antibody", 0.95, "keywords"
     elif _PEPTIDE_RE.search(s):
@@ -572,7 +571,7 @@ def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -
         type["type"], type["type_confidence"], type["type_provenance"] = "aptamer", 0.9, "keywords"
     elif _FOLATE_RE.search(s):
         type["type"], type["type_confidence"], type["type_provenance"] = "folate", 0.9, "keywords"
-    # Mejora para version 3: detección de albumina
+    # Detección de albumina - Versión 3
     elif _ALBUMIN_RE.search(s):
         type["type"], type["type_confidence"], type["type_provenance"] = "albumin", 0.9, "keywords"
     elif _PEG_RE.search(s):
@@ -580,7 +579,7 @@ def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -
     elif _TARGET_RE.search(s):
         type["type"], type["type_confidence"], type["type_provenance"] = "targeting", 0.7, "context"
 
-    # --- Polaridad (más contextual y con precaución) ---
+    # Polaridad (más contextual)
     if _HYDROPHOBIC_RE.search(s):
         polarity["polarity"], polarity["polarity_confidence"], polarity["polarity_provenance"] = "nonpolar", 0.8, "keywords"
     elif _HYDROPHILIC_RE.search(s):
@@ -588,12 +587,12 @@ def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -
     elif _PEG_RE.search(s):
         polarity["polarity"], polarity["polarity_confidence"], polarity["polarity_provenance"] = "hydrophilic", 0.7, "inferred"
 
-    # --- Carga eléctrica ---
+    # Carga eléctrica
     cationic = bool(_LIGAND_CATIONIC_RE.search(s))
     anionic = bool(_LIGAND_ANIONIC_RE.search(s))
     zwit = bool(_LIGAND_ZWITTERIONIC_RE.search(s))
 
-    # conflict detection
+    # Detección de conflicto
     if cationic and anionic:
         charge["charge"], charge["charge_confidence"], charge["charge_provenance"] = "ambiguous", 0.0, "conflict:ligand"
     elif cationic:
@@ -605,7 +604,7 @@ def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -
     elif _PEG_RE.search(s):
         charge["charge"], charge["charge_confidence"], charge["charge_provenance"] = "neutral", 0.7, "inferred"
     
-    # --- Fallback inference desde type (cuando no hay keywords explícitos de carga) --- Mejora para version 3
+    # Inferencia por defecto desde type (cuando no hay keywords explícitos de carga) - Versión 3
     if charge["charge"] == "unknown" and type["type"] != "unknown":
         if type["type"] == "antibody":
             # Antibodies son típicamente neutrales/zwitterionic a pH fisiológico
@@ -623,7 +622,7 @@ def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -
             charge["charge_confidence"] = 0.7
             charge["charge_provenance"] = "inferred:from_type:folate"
     
-    # --- Fallback inference para polaridad desde type ---
+    # Fallback inference para polaridad desde type
     if polarity["polarity"] == "unknown" and type["type"] != "unknown":
         if type["type"] in ["antibody", "peptide", "albumin", "folate"]:
             # Biomoléculas típicamente hidrofílicas
@@ -633,7 +632,7 @@ def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -
 
     return {**type, **polarity, **charge}
 
-
+# Inferencia de biomolécula encapsulada o transportada
 def infer_biomolecule_type(display_name: str, definition: str) -> Tuple[str, float, str]:
     s = _combine(display_name, definition)
 
@@ -665,7 +664,7 @@ def infer_biomolecule_type(display_name: str, definition: str) -> Tuple[str, flo
 
     return "unknown", 0.0, "none"
 
-
+# Inferencia de material de superficie (muchos son fallback de tipo de nanopartícula)
 def infer_surface_material(
     display_name: str, 
     synonyms: str, 
@@ -698,7 +697,7 @@ def infer_surface_material(
         re.IGNORECASE
     )
     if m:
-        # Mapeo de términos detectados → valores estandarizados
+        # Mapeo de términos detectados → valores estandarizados - HACE FALTA?
         material_mapping = {
             "peg": "peg", "polyethylene": "peg", "pegylated": "peg", "polyethylene glycol": "peg",
             "albumin": "albumin", "protein": "protein",
@@ -745,6 +744,7 @@ def row_to_input(row: pd.Series) -> Dict[str, Any]:
     definition = _norm(row.get("Definition"))
     concept_subset = _norm(row.get("Concept in Subset"))
 
+    # Carga de inferencias
     np_type, np_type_conf, np_type_src = infer_np_type(display, syns, definition)
     np_charge, np_charge_conf, np_charge_src = infer_charge(display, definition, concept_subset)
     biom_type, biom_conf, biom_src = infer_biomolecule_type(display, definition)
@@ -764,7 +764,7 @@ def row_to_input(row: pd.Series) -> Dict[str, Any]:
     )
     
 
-
+    # Construir el input case
     input_case = {
         "context": {
             "source_code": _norm(row.get("Code")),
@@ -821,4 +821,4 @@ def load_and_convert(path: str, n: int = None, save_jsonl: str = None) -> List[D
 # 🔹 EJECUCIÓN DIRECTA
 # ──────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    out = load_and_convert("../datasets/dataset_FINAL2.csv", save_jsonl="rdr_inputs_v4.jsonl")
+    out = load_and_convert("../datasets/dataset_FINAL2.csv", save_jsonl="rdr_inputs_vX.jsonl") # cambiar según versión
