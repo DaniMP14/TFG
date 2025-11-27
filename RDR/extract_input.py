@@ -555,7 +555,7 @@ def infer_surface_charge(
     return "unknown", 0.0, "propagated_from_nanoparticle:none"
 
 
-# TODO: consistencia carga ligando <-> carga superficie - PARA VERSIÓN 5?
+# TODO: consistencia carga ligando <-> carga superficie - PARA VERSIÓN 5? Junto con el fallback de targeting (es muy vago)
 def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -> Dict[str, Any]:
     s = _combine(display_name, synonyms, definition)
     type = {"type": "unknown", "type_confidence": 0.0, "type_provenance": "none"}
@@ -821,4 +821,4 @@ def load_and_convert(path: str, n: int = None, save_jsonl: str = None) -> List[D
 # 🔹 EJECUCIÓN DIRECTA
 # ──────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    out = load_and_convert("../datasets/dataset_FINAL2.csv", save_jsonl="rdr_inputs_vX.jsonl") # cambiar según versión
+    out = load_and_convert("../datasets/dataset_FINAL2.csv", save_jsonl="rdr_inputs_v4.jsonl")

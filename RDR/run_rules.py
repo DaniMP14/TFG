@@ -67,8 +67,8 @@ def run(input_path: str, output_path: str, n: int = 10, use_all: bool = False):
 def main():
     input_path = r"rdr_inputs_v4.jsonl"
     output_path = r"rdr_predictions_v4.jsonl"
-    n = 10
-    use_all = False
+    n = 128
+    use_all = True # si True, usa evaluate_all en lugar de evaluate, obteniendo todas las conclusiones posibles
     if len(sys.argv) > 1:
         input_path = sys.argv[1]
     if len(sys.argv) > 2:
@@ -82,7 +82,17 @@ def main():
         use_all = True
 
     results = run(input_path, output_path, n=n, use_all=use_all)
-    print(f"Procesadas {len(results)} entradas. Resultados: {output_path}")
+    print(f"✓ Procesadas {len(results)} entradas. Predicciones guardadas en: {output_path}")
+    
+    # Generar reporte legible automáticamente
+    try:
+        from generate_recommendations import generate_batch_report
+        report_path = output_path.replace('_predictions_', '_reporte_').replace('.jsonl', '.txt')
+        print(f"\nGenerando reporte de decisiones...")
+        generate_batch_report(output_path, report_path)
+    except Exception as e:
+        print(f"⚠ No se pudo generar reporte automático: {e}")
+        print(f"  Ejecuta manualmente: python RDR/generate_recommendations.py")
 
 
 if __name__ == '__main__':

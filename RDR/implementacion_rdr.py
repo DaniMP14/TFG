@@ -65,7 +65,7 @@ class GRDRRule:
             # la regla puede declarar su propia confianza devolviendo 'rule_confidence' en la acción
             rule_conf = float(action_result.get("rule_confidence", 1.0)) if isinstance(action_result, dict) else 1.0
 
-            prediction_confidence = input_conf * rule_conf
+            prediction_confidence = input_conf * rule_conf # confianza combinada entre input y regla
 
             self.execution_time = time.time() - start_time
 
