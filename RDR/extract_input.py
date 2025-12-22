@@ -821,4 +821,4 @@ def load_and_convert(path: str, n: int = None, save_jsonl: str = None) -> List[D
 # 🔹 EJECUCIÓN DIRECTA
 # ──────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    out = load_and_convert("../datasets/dataset_FINAL2.csv", save_jsonl="rdr_inputs_v4.jsonl")
+    out = load_and_convert("../datasets/dataset_FINAL2.csv", save_jsonl="ins/rdr_inputs_v4.jsonl")

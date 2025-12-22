@@ -94,8 +94,10 @@ def attach_rules(root: Any) -> None:
     rule_charge.add_exception(rule_lipidic)
 
     # Conectar nodos al root
-    root.add_exception(rule_material)
-    root.add_exception(rule_surface)
-    root.add_exception(rule_ligand_props)
-    root.add_exception(rule_biomolecule)
-    root.add_exception(rule_charge)
+    # Orden de prioridad: carga/biomoléculas > superficie > polaridad ligando > material genérico
+    # Razón: interacciones electrostáticas y biomoleculares suelen dominar sobre tipo de material
+    root.add_exception(rule_charge)        # 1. Interacciones electrostáticas (carga opuesta)
+    root.add_exception(rule_biomolecule)   # 2. Biomoléculas específicas (RNA, DNA)
+    root.add_exception(rule_surface)       # 3. Características superficiales (PEG, funcionalización)
+    root.add_exception(rule_ligand_props)  # 4. Propiedades del ligando (hidrofóbico/hidrofílico)
+    root.add_exception(rule_material)      # 5. Tipo de material (lipídico, polimérico, metálico)

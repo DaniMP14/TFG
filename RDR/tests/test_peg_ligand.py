@@ -1,6 +1,6 @@
 import json
 
-items = [json.loads(line) for line in open('rdr_inputs_v1.jsonl', encoding='utf-8')]
+items = [json.loads(line) for line in open('../ins/rdr_inputs_v1.jsonl', encoding='utf-8')]
 
 # Casos con PEG
 peg_cases = [i for i in items if 'peg' in i['context']['display_name'].lower() or i['ligand']['type'] == 'polymer-peg']

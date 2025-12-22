@@ -20,8 +20,8 @@ def load_jsonl(path):
 
 def analyze_missed_patterns():
     # Cargar datos
-    jsonl_path = Path(__file__).parent / "rdr_inputs_v1.jsonl"
-    csv_path = Path(__file__).parent.parent / "datasets" / "dataset_FINAL2.csv"
+    jsonl_path = Path(__file__).parent / "../rdr_inputs_v1.jsonl"
+    csv_path = Path(__file__).parent.parent.parent / "datasets" / "dataset_FINAL2.csv"
     
     inputs = load_jsonl(jsonl_path)
     df = pd.read_csv(csv_path, encoding='utf-8')

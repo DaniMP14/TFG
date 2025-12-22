@@ -1,9 +1,9 @@
 {
   "estadisticas": {
     "aprobados": 1,
-    "condicionales": 21,
+    "condicionales": 18,
     "rechazados": 0,
-    "requieren_validacion": 106
+    "requieren_validacion": 109
   },
   "reportes": [
     {
@@ -51,8 +51,8 @@
     {
       "farmaco": "Liposomal HPV-16 E6/E7 Multipeptide Vaccine PDS0101",
       "codigo_fuente": "C111688",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "61.13% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "78.60% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -95,11 +95,11 @@
     {
       "farmaco": "Fluorescent cRGDY PEG-Cy5.5 C Dots",
       "codigo_fuente": "C115104",
-      "regla_aplicada": "Polymeric Encapsulation",
-      "confianza_prediccion": "60.60% (Baja)",
+      "regla_aplicada": "PEGylated Neutralization",
+      "confianza_prediccion": "57.23% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia"
       },
       "recomendaciones": [
         "◐ Formulación viable con optimizaciones recomendadas"
@@ -111,13 +111,13 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "◐ VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
     },
     {
       "farmaco": "MYC-targeting siRNA DCR-MYC",
       "codigo_fuente": "C115108",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.17% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "28.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -160,8 +160,8 @@
     {
       "farmaco": "Patisiran",
       "codigo_fuente": "C116792",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "21.58% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "27.75% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -183,8 +183,8 @@
     {
       "farmaco": "Pegylated Liposomal Nanoparticle-based Docetaxel Prodrug MNK-010",
       "codigo_fuente": "C116869",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "47.13% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "60.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -201,7 +201,7 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "⚠ REVISAR - Consultar con equipo de formulación"
     },
     {
       "farmaco": "Nanoparticle Albumin-bound Thiocolchicine Dimer nab-5404",
@@ -353,8 +353,8 @@
     {
       "farmaco": "CEBPA-targeting saRNA MTL-CEBPA Liposome",
       "codigo_fuente": "C126800",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -376,11 +376,11 @@
     {
       "farmaco": "Iodine I 124-cRGDY-PEG-C Dots",
       "codigo_fuente": "C128132",
-      "regla_aplicada": "Polymeric Encapsulation",
-      "confianza_prediccion": "60.60% (Baja)",
+      "regla_aplicada": "PEGylated Neutralization",
+      "confianza_prediccion": "57.23% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia"
       },
       "recomendaciones": [
         "◐ Formulación viable con optimizaciones recomendadas"
@@ -392,7 +392,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "◐ VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
     },
     {
       "farmaco": "Polysiloxane/Gadolinium Chelates-based Nanoparticles",
@@ -462,8 +462,8 @@
     {
       "farmaco": "Ceramide Nanoliposome",
       "codigo_fuente": "C131434",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "20.88% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "26.85% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -506,8 +506,8 @@
     {
       "farmaco": "Anti-EphA2 Antibody-directed Liposomal Docetaxel Prodrug MM-310",
       "codigo_fuente": "C136981",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "48.30% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "62.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -524,7 +524,7 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "⚠ REVISAR - Consultar con equipo de formulación"
     },
     {
       "farmaco": "Belzupacap Sarotalocan",
@@ -572,8 +572,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulated OX40L mRNA-2416",
       "codigo_fuente": "C142137",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -829,11 +829,11 @@
     {
       "farmaco": "Zirconium Zr 89-DFO-cRGDY PEG-Cy5-C' Dots",
       "codigo_fuente": "C156739",
-      "regla_aplicada": "Polymeric Encapsulation",
-      "confianza_prediccion": "60.60% (Baja)",
+      "regla_aplicada": "PEGylated Neutralization",
+      "confianza_prediccion": "57.23% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia"
       },
       "recomendaciones": [
         "◐ Formulación viable con optimizaciones recomendadas"
@@ -845,13 +845,13 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "◐ VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
     },
     {
       "farmaco": "Sapecmeran Autogene",
       "codigo_fuente": "C156926",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.33% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.00% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -873,8 +873,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulating mRNAs Encoding Human OX40L/IL-23/IL-36gamma mRNA-2752",
       "codigo_fuente": "C157247",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.63% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "29.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -917,8 +917,8 @@
     {
       "farmaco": "Cavrotolimod",
       "codigo_fuente": "C157771",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.17% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "28.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1004,8 +1004,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulated mRNAs Encoding Human IL-12A/IL-12B MEDI-1191",
       "codigo_fuente": "C160867",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1027,8 +1027,8 @@
     {
       "farmaco": "mRNA-derived KRAS-targeted Vaccine V941",
       "codigo_fuente": "C162186",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.33% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.00% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1071,8 +1071,8 @@
     {
       "farmaco": "Docetaxel Polymeric Micelles",
       "codigo_fuente": "C165263",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "18.08% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "23.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1094,11 +1094,11 @@
     {
       "farmaco": "Copper Cu 64 NOTA-PSMAi-PEG-Cy5.5-C' Dots",
       "codigo_fuente": "C166169",
-      "regla_aplicada": "Polymeric Encapsulation",
-      "confianza_prediccion": "74.10% (Media)",
+      "regla_aplicada": "PEGylated Neutralization",
+      "confianza_prediccion": "69.98% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia"
       },
       "recomendaciones": [
         "◐ Formulación viable con optimizaciones recomendadas"
@@ -1136,11 +1136,11 @@
     {
       "farmaco": "Pegylated SN-38 Conjugate PLX038",
       "codigo_fuente": "C167334",
-      "regla_aplicada": "Polymeric Encapsulation",
-      "confianza_prediccion": "74.85% (Media)",
+      "regla_aplicada": "PEGylated Neutralization",
+      "confianza_prediccion": "70.69% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia"
       },
       "recomendaciones": [
         "◐ Formulación viable con optimizaciones recomendadas"
@@ -1178,8 +1178,8 @@
     {
       "farmaco": "Liposomal Bcl-2 Antisense Oligonucleotide BP1002",
       "codigo_fuente": "C170743",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "31.38% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "40.35% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1201,8 +1201,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulating Glutathione S-transferase P siRNA NBF-006",
       "codigo_fuente": "C170753",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.63% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "29.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1266,8 +1266,8 @@
     {
       "farmaco": "Fenretinide Phospholipid Suspension ST-001",
       "codigo_fuente": "C175469",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "28.58% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "36.75% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1352,8 +1352,8 @@
     {
       "farmaco": "miRNA 193a-3p Mimic INT-1B3",
       "codigo_fuente": "C179581",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1396,8 +1396,8 @@
     {
       "farmaco": "mRNA-encoded Anti-Claudin18.2 Monoclonal Antibody BNT141",
       "codigo_fuente": "C179620",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "48.42% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "62.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1414,13 +1414,13 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "⚠ REVISAR - Consultar con equipo de formulación"
     },
     {
       "farmaco": "Ribocytokine IL-2 BNT153",
       "codigo_fuente": "C179638",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.17% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "28.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1442,8 +1442,8 @@
     {
       "farmaco": "Ribocytokine IL-7 BNT152",
       "codigo_fuente": "C179639",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.17% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "28.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1507,8 +1507,8 @@
     {
       "farmaco": "CD122-selective IL-2/Anti-CD25 Antibody-like Fusion Protein ANV419",
       "codigo_fuente": "C180674",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "48.42% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "62.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1525,13 +1525,13 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "⚠ REVISAR - Consultar con equipo de formulación"
     },
     {
       "farmaco": "Nanoparticles Encapsulating TLR7 Agonist 1v270 MBS8",
       "codigo_fuente": "C180692",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "56.58% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "72.75% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1548,7 +1548,7 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "⚠ REVISAR - Consultar con equipo de formulación"
     },
     {
       "farmaco": "Anti-TGF-beta 1/Anti-COX-2 siRNAs STP707",
@@ -1574,8 +1574,8 @@
     {
       "farmaco": "Lipid Nanoparticle-encapsulated EBV mRNA Vaccine mRNA-1189",
       "codigo_fuente": "C185869",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.63% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "29.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1618,8 +1618,8 @@
     {
       "farmaco": "Akt-1 Antisense Oligonucleotide WGI-0301",
       "codigo_fuente": "C187033",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.17% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "28.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1683,8 +1683,8 @@
     {
       "farmaco": "mRNA-encoded Anti-CD3/Anti-CLDN6 Bispecific Antibody BNT142",
       "codigo_fuente": "C187124",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "48.42% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "62.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1701,13 +1701,13 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "⚠ REVISAR - Consultar con equipo de formulación"
     },
     {
       "farmaco": "Lipid Nanoparticle Encapsulated MYC-targeting mRNA-based Agent OTX-2002",
       "codigo_fuente": "C190153",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.63% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "29.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1729,8 +1729,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulated Self-replicating RNA Encoding Human IL-12 JCXH-211",
       "codigo_fuente": "C190391",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.63% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "29.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1837,8 +1837,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulated mRNA Encoding Human Single-chain IL-12 ABO2011",
       "codigo_fuente": "C202248",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1902,8 +1902,8 @@
     {
       "farmaco": "Autologous Total Tumor mRNA Loaded Liposome Vaccine",
       "codigo_fuente": "C204794",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "41.30% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "53.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1925,8 +1925,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulating mRNA Encoding Cas9 Protein and TTR-targeting Single Guide RNA NTLA-2001",
       "codigo_fuente": "C204942",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1948,8 +1948,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulated Self-replicating RNA Encoding Human IL-12 STX-001",
       "codigo_fuente": "C205639",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.63% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "29.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -1993,8 +1993,8 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulating Beta-catenin siRNA ALN-BCAT",
       "codigo_fuente": "C210897",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2143,11 +2143,11 @@
     {
       "farmaco": "PEG-PEI-cholesterol Lipopolymer-encased IL-12 DNA Plasmid Vector IMNN-001",
       "codigo_fuente": "C49178",
-      "regla_aplicada": "Polymeric Encapsulation",
-      "confianza_prediccion": "77.10% (Media)",
+      "regla_aplicada": "PEGylated Neutralization",
+      "confianza_prediccion": "72.82% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia"
       },
       "recomendaciones": [
         "◐ Formulación viable con optimizaciones recomendadas"
@@ -2291,8 +2291,8 @@
     {
       "farmaco": "Liposome Vesicle",
       "codigo_fuente": "C62384",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "20.88% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "26.85% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2357,8 +2357,8 @@
     {
       "farmaco": "CHP-HER-2 Peptide Vaccine",
       "codigo_fuente": "C62597",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "38.50% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "49.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2380,8 +2380,8 @@
     {
       "farmaco": "CHP-NY-ESO-1 Peptide Vaccine IMF-001",
       "codigo_fuente": "C62598",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "38.50% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "49.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2509,8 +2509,8 @@
     {
       "farmaco": "Anti-KSP/Anti-VEGF siRNAs ALN-VSP02",
       "codigo_fuente": "C82391",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "21.58% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "27.75% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2532,8 +2532,8 @@
     {
       "farmaco": "Irinotecan Sucrosofate",
       "codigo_fuente": "C82676",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "48.30% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "62.10% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2550,7 +2550,7 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "⚠ REVISAR - Consultar con equipo de formulación"
     },
     {
       "farmaco": "Hsp90 Inhibitor AB-010",
@@ -2576,11 +2576,11 @@
     {
       "farmaco": "Demplatin Pegraglumer",
       "codigo_fuente": "C85476",
-      "regla_aplicada": "Polymeric Encapsulation",
-      "confianza_prediccion": "75.00% (Media)",
+      "regla_aplicada": "PEGylated Neutralization",
+      "confianza_prediccion": "70.83% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia"
       },
       "recomendaciones": [
         "◐ Formulación viable con optimizaciones recomendadas"
@@ -2597,8 +2597,8 @@
     {
       "farmaco": "C-VISA BikDD:Liposome",
       "codigo_fuente": "C88264",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "51.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "66.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2615,13 +2615,13 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "⚠ REVISAR - Consultar con equipo de formulación"
     },
     {
       "farmaco": "Protein Stabilized Liposomal Docetaxel Nanoparticles",
       "codigo_fuente": "C90534",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "22.05% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "28.35% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2643,8 +2643,8 @@
     {
       "farmaco": "Oxaliplatin-Encapsulated Transferrin-Conjugated N-glutaryl Phosphatidylethanolamine Liposome",
       "codigo_fuente": "C91074",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "30.80% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "39.60% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"
@@ -2687,8 +2687,8 @@
     {
       "farmaco": "Quaratusugene Ozeplasmid",
       "codigo_fuente": "C91708",
-      "regla_aplicada": "Lipid General",
-      "confianza_prediccion": "43.17% (Baja)",
+      "regla_aplicada": "Lipid Nanoparticle Exception",
+      "confianza_prediccion": "55.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
         "orden_monocapa": "Monocapa fluida con reorganización dinámica"

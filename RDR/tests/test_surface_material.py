@@ -1,6 +1,6 @@
 import json
 
-items = [json.loads(line) for line in open('rdr_inputs_v1.jsonl', encoding='utf-8')]
+items = [json.loads(line) for line in open('../ins/rdr_inputs_v1.jsonl', encoding='utf-8')]
 
 print("=== DISTRIBUCIÓN DE SURFACE.MATERIAL ===\n")
 material_counts = {}

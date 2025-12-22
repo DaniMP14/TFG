@@ -65,7 +65,7 @@ def run(input_path: str, output_path: str, n: int = 10, use_all: bool = False):
 
 
 def main():
-    input_path = r"rdr_inputs_v4.jsonl"
+    input_path = r"ins/rdr_inputs_v4.jsonl"
     output_path = r"rdr_predictions_v4.jsonl"
     n = 128
     use_all = True # si True, usa evaluate_all en lugar de evaluate, obteniendo todas las conclusiones posibles

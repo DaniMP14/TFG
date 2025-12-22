@@ -4,9 +4,9 @@ REPORTE DE DECISIÓN - SISTEMA RDR NANOFARMACOLOGÍA
 
 Total de fármacos analizados: 128
   ✓ Aprobados: 1
-  ◐ Condicionales/Viables: 21
+  ◐ Condicionales/Viables: 18
   ✗ Rechazados: 0
-  ❓ Requieren validación: 106
+  ❓ Requieren validación: 109
 
 ================================================================================
 
@@ -65,8 +65,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #3: Liposomal HPV-16 E6/E7 Multipeptide Vaccine PDS0101
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C111688
-Regla aplicada: Lipid General
-Confianza: 61.13% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 78.60% (Media)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -117,12 +117,12 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #5: Fluorescent cRGDY PEG-Cy5.5 C Dots
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C115104
-Regla aplicada: Polymeric Encapsulation
-Confianza: 60.60% (Baja)
+Regla aplicada: PEGylated Neutralization
+Confianza: 57.23% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
-  • Monocapa: Monocapa estable con orden estructurado
+  • Monocapa: Monocapa semi-ordenada con estabilidad intermedia
 
 RECOMENDACIONES:
   ◐ Formulación viable con optimizaciones recomendadas
@@ -135,15 +135,15 @@ OPTIMIZACIONES SUGERIDAS:
   • Probar modificaciones químicas del ligando (PEGylation, acetilación)
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ◐ VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas <<<
+  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
 FÁRMACO #6: MYC-targeting siRNA DCR-MYC
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C115108
-Regla aplicada: Lipid General
-Confianza: 22.17% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 28.50% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -194,8 +194,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #8: Patisiran
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C116792
-Regla aplicada: Lipid General
-Confianza: 21.58% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 27.75% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -221,8 +221,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #9: Pegylated Liposomal Nanoparticle-based Docetaxel Prodrug MNK-010
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C116869
-Regla aplicada: Lipid General
-Confianza: 47.13% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 60.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -241,7 +241,7 @@ OPTIMIZACIONES SUGERIDAS:
   • Validar temperatura de transición de fase
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
+  >>> ⚠ REVISAR - Consultar con equipo de formulación <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -423,8 +423,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #17: CEBPA-targeting saRNA MTL-CEBPA Liposome
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C126800
-Regla aplicada: Lipid General
-Confianza: 30.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -450,12 +450,12 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #18: Iodine I 124-cRGDY-PEG-C Dots
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C128132
-Regla aplicada: Polymeric Encapsulation
-Confianza: 60.60% (Baja)
+Regla aplicada: PEGylated Neutralization
+Confianza: 57.23% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
-  • Monocapa: Monocapa estable con orden estructurado
+  • Monocapa: Monocapa semi-ordenada con estabilidad intermedia
 
 RECOMENDACIONES:
   ◐ Formulación viable con optimizaciones recomendadas
@@ -468,7 +468,7 @@ OPTIMIZACIONES SUGERIDAS:
   • Probar modificaciones químicas del ligando (PEGylation, acetilación)
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ◐ VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas <<<
+  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -552,8 +552,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #22: Ceramide Nanoliposome
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C131434
-Regla aplicada: Lipid General
-Confianza: 20.88% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 26.85% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -604,8 +604,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #24: Anti-EphA2 Antibody-directed Liposomal Docetaxel Prodrug MM-310
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C136981
-Regla aplicada: Lipid General
-Confianza: 48.30% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 62.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -624,7 +624,7 @@ OPTIMIZACIONES SUGERIDAS:
   • Validar temperatura de transición de fase
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
+  >>> ⚠ REVISAR - Consultar con equipo de formulación <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -682,8 +682,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #27: Lipid Nanoparticle Encapsulated OX40L mRNA-2416
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C142137
-Regla aplicada: Lipid General
-Confianza: 30.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -987,12 +987,12 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #39: Zirconium Zr 89-DFO-cRGDY PEG-Cy5-C' Dots
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C156739
-Regla aplicada: Polymeric Encapsulation
-Confianza: 60.60% (Baja)
+Regla aplicada: PEGylated Neutralization
+Confianza: 57.23% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
-  • Monocapa: Monocapa estable con orden estructurado
+  • Monocapa: Monocapa semi-ordenada con estabilidad intermedia
 
 RECOMENDACIONES:
   ◐ Formulación viable con optimizaciones recomendadas
@@ -1005,15 +1005,15 @@ OPTIMIZACIONES SUGERIDAS:
   • Probar modificaciones químicas del ligando (PEGylation, acetilación)
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ◐ VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas <<<
+  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
 FÁRMACO #40: Sapecmeran Autogene
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C156926
-Regla aplicada: Lipid General
-Confianza: 30.33% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.00% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1039,8 +1039,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #41: Lipid Nanoparticle Encapsulating mRNAs Encoding Human OX40L/IL-23/IL-36gamma mRNA-2752
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C157247
-Regla aplicada: Lipid General
-Confianza: 22.63% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 29.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1091,8 +1091,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #43: Cavrotolimod
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C157771
-Regla aplicada: Lipid General
-Confianza: 22.17% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 28.50% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1194,8 +1194,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #47: Lipid Nanoparticle Encapsulated mRNAs Encoding Human IL-12A/IL-12B MEDI-1191
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C160867
-Regla aplicada: Lipid General
-Confianza: 30.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1221,8 +1221,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #48: mRNA-derived KRAS-targeted Vaccine V941
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C162186
-Regla aplicada: Lipid General
-Confianza: 30.33% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.00% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1273,8 +1273,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #50: Docetaxel Polymeric Micelles
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C165263
-Regla aplicada: Lipid General
-Confianza: 18.08% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 23.25% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1300,12 +1300,12 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #51: Copper Cu 64 NOTA-PSMAi-PEG-Cy5.5-C' Dots
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C166169
-Regla aplicada: Polymeric Encapsulation
-Confianza: 74.10% (Media)
+Regla aplicada: PEGylated Neutralization
+Confianza: 69.98% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
-  • Monocapa: Monocapa estable con orden estructurado
+  • Monocapa: Monocapa semi-ordenada con estabilidad intermedia
 
 RECOMENDACIONES:
   ◐ Formulación viable con optimizaciones recomendadas
@@ -1350,12 +1350,12 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #53: Pegylated SN-38 Conjugate PLX038
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C167334
-Regla aplicada: Polymeric Encapsulation
-Confianza: 74.85% (Media)
+Regla aplicada: PEGylated Neutralization
+Confianza: 70.69% (Media)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
-  • Monocapa: Monocapa estable con orden estructurado
+  • Monocapa: Monocapa semi-ordenada con estabilidad intermedia
 
 RECOMENDACIONES:
   ◐ Formulación viable con optimizaciones recomendadas
@@ -1400,8 +1400,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #55: Liposomal Bcl-2 Antisense Oligonucleotide BP1002
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C170743
-Regla aplicada: Lipid General
-Confianza: 31.38% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 40.35% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1427,8 +1427,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #56: Lipid Nanoparticle Encapsulating Glutathione S-transferase P siRNA NBF-006
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C170753
-Regla aplicada: Lipid General
-Confianza: 22.63% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 29.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1504,8 +1504,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #59: Fenretinide Phospholipid Suspension ST-001
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C175469
-Regla aplicada: Lipid General
-Confianza: 28.58% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 36.75% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1606,8 +1606,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #63: miRNA 193a-3p Mimic INT-1B3
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C179581
-Regla aplicada: Lipid General
-Confianza: 30.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1658,8 +1658,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #65: mRNA-encoded Anti-Claudin18.2 Monoclonal Antibody BNT141
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C179620
-Regla aplicada: Lipid General
-Confianza: 48.42% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 62.25% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1678,15 +1678,15 @@ OPTIMIZACIONES SUGERIDAS:
   • Validar temperatura de transición de fase
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
+  >>> ⚠ REVISAR - Consultar con equipo de formulación <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
 FÁRMACO #66: Ribocytokine IL-2 BNT153
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C179638
-Regla aplicada: Lipid General
-Confianza: 22.17% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 28.50% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1712,8 +1712,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #67: Ribocytokine IL-7 BNT152
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C179639
-Regla aplicada: Lipid General
-Confianza: 22.17% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 28.50% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1789,8 +1789,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #70: CD122-selective IL-2/Anti-CD25 Antibody-like Fusion Protein ANV419
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C180674
-Regla aplicada: Lipid General
-Confianza: 48.42% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 62.25% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1809,15 +1809,15 @@ OPTIMIZACIONES SUGERIDAS:
   • Validar temperatura de transición de fase
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
+  >>> ⚠ REVISAR - Consultar con equipo de formulación <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
 FÁRMACO #71: Nanoparticles Encapsulating TLR7 Agonist 1v270 MBS8
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C180692
-Regla aplicada: Lipid General
-Confianza: 56.58% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 72.75% (Media)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1836,7 +1836,7 @@ OPTIMIZACIONES SUGERIDAS:
   • Validar temperatura de transición de fase
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
+  >>> ⚠ REVISAR - Consultar con equipo de formulación <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -1868,8 +1868,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #73: Lipid Nanoparticle-encapsulated EBV mRNA Vaccine mRNA-1189
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C185869
-Regla aplicada: Lipid General
-Confianza: 22.63% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 29.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1920,8 +1920,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #75: Akt-1 Antisense Oligonucleotide WGI-0301
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C187033
-Regla aplicada: Lipid General
-Confianza: 22.17% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 28.50% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -1997,8 +1997,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #78: mRNA-encoded Anti-CD3/Anti-CLDN6 Bispecific Antibody BNT142
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C187124
-Regla aplicada: Lipid General
-Confianza: 48.42% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 62.25% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2017,15 +2017,15 @@ OPTIMIZACIONES SUGERIDAS:
   • Validar temperatura de transición de fase
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
+  >>> ⚠ REVISAR - Consultar con equipo de formulación <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
 FÁRMACO #79: Lipid Nanoparticle Encapsulated MYC-targeting mRNA-based Agent OTX-2002
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C190153
-Regla aplicada: Lipid General
-Confianza: 22.63% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 29.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2051,8 +2051,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #80: Lipid Nanoparticle Encapsulated Self-replicating RNA Encoding Human IL-12 JCXH-211
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C190391
-Regla aplicada: Lipid General
-Confianza: 22.63% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 29.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2179,8 +2179,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #85: Lipid Nanoparticle Encapsulated mRNA Encoding Human Single-chain IL-12 ABO2011
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C202248
-Regla aplicada: Lipid General
-Confianza: 30.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2256,8 +2256,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #88: Autologous Total Tumor mRNA Loaded Liposome Vaccine
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C204794
-Regla aplicada: Lipid General
-Confianza: 41.30% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 53.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2283,8 +2283,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #89: Lipid Nanoparticle Encapsulating mRNA Encoding Cas9 Protein and TTR-targeting Single Guide RNA NTLA-2001
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C204942
-Regla aplicada: Lipid General
-Confianza: 30.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2310,8 +2310,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #90: Lipid Nanoparticle Encapsulated Self-replicating RNA Encoding Human IL-12 STX-001
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C205639
-Regla aplicada: Lipid General
-Confianza: 22.63% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 29.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2363,8 +2363,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #92: Lipid Nanoparticle Encapsulating Beta-catenin siRNA ALN-BCAT
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C210897
-Regla aplicada: Lipid General
-Confianza: 30.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2541,12 +2541,12 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #99: PEG-PEI-cholesterol Lipopolymer-encased IL-12 DNA Plasmid Vector IMNN-001
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C49178
-Regla aplicada: Polymeric Encapsulation
-Confianza: 77.10% (Media)
+Regla aplicada: PEGylated Neutralization
+Confianza: 72.82% (Media)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
-  • Monocapa: Monocapa estable con orden estructurado
+  • Monocapa: Monocapa semi-ordenada con estabilidad intermedia
 
 RECOMENDACIONES:
   ◐ Formulación viable con optimizaciones recomendadas
@@ -2717,8 +2717,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #106: Liposome Vesicle
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C62384
-Regla aplicada: Lipid General
-Confianza: 20.88% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 26.85% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2795,8 +2795,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #109: CHP-HER-2 Peptide Vaccine
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C62597
-Regla aplicada: Lipid General
-Confianza: 38.50% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 49.50% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2822,8 +2822,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #110: CHP-NY-ESO-1 Peptide Vaccine IMF-001
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C62598
-Regla aplicada: Lipid General
-Confianza: 38.50% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 49.50% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -2975,8 +2975,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #116: Anti-KSP/Anti-VEGF siRNAs ALN-VSP02
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C82391
-Regla aplicada: Lipid General
-Confianza: 21.58% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 27.75% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -3002,8 +3002,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #117: Irinotecan Sucrosofate
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C82676
-Regla aplicada: Lipid General
-Confianza: 48.30% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 62.10% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -3022,7 +3022,7 @@ OPTIMIZACIONES SUGERIDAS:
   • Validar temperatura de transición de fase
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
+  >>> ⚠ REVISAR - Consultar con equipo de formulación <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -3054,12 +3054,12 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #119: Demplatin Pegraglumer
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C85476
-Regla aplicada: Polymeric Encapsulation
-Confianza: 75.00% (Media)
+Regla aplicada: PEGylated Neutralization
+Confianza: 70.83% (Media)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
-  • Monocapa: Monocapa estable con orden estructurado
+  • Monocapa: Monocapa semi-ordenada con estabilidad intermedia
 
 RECOMENDACIONES:
   ◐ Formulación viable con optimizaciones recomendadas
@@ -3079,8 +3079,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #120: C-VISA BikDD:Liposome
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C88264
-Regla aplicada: Lipid General
-Confianza: 51.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 66.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -3099,15 +3099,15 @@ OPTIMIZACIONES SUGERIDAS:
   • Validar temperatura de transición de fase
 
 DECISIÓN DE PRODUCCIÓN:
-  >>> ❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes <<<
+  >>> ⚠ REVISAR - Consultar con equipo de formulación <<<
 
 
 ────────────────────────────────────────────────────────────────────────────────
 FÁRMACO #121: Protein Stabilized Liposomal Docetaxel Nanoparticles
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C90534
-Regla aplicada: Lipid General
-Confianza: 22.05% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 28.35% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -3133,8 +3133,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #122: Oxaliplatin-Encapsulated Transferrin-Conjugated N-glutaryl Phosphatidylethanolamine Liposome
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C91074
-Regla aplicada: Lipid General
-Confianza: 30.80% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 39.60% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula
@@ -3185,8 +3185,8 @@ DECISIÓN DE PRODUCCIÓN:
 FÁRMACO #124: Quaratusugene Ozeplasmid
 ────────────────────────────────────────────────────────────────────────────────
 Código NCIt: C91708
-Regla aplicada: Lipid General
-Confianza: 43.17% (Baja)
+Regla aplicada: Lipid Nanoparticle Exception
+Confianza: 55.50% (Baja)
 
 RESULTADOS:
   • Afinidad: Afinidad moderada ligando-nanopartícula

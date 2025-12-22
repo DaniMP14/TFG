@@ -12,7 +12,7 @@ DATASET_PATH = Path("../datasets/dataset_FINAL2.csv")
 df_original = pd.read_csv(DATASET_PATH, encoding='utf-8')
 df_original['Code'] = df_original['Code'].astype(str).str.strip()
 
-V3_PATH = Path("rdr_inputs_v3.jsonl")
+V3_PATH = Path("ins/rdr_inputs_v3.jsonl")
 entries_v3 = []
 with open(V3_PATH, 'r', encoding='utf-8') as f:
     for line in f:

@@ -17,8 +17,8 @@ def load_jsonl(path):
 
 def compare_versions():
     # Cargar ambas versiones
-    v1_path = Path(__file__).parent / "rdr_inputs_v1.jsonl"
-    v2_path = Path(__file__).parent / "rdr_inputs_v2.jsonl"
+    v1_path = Path(__file__).parent / "../../ins/rdr_inputs_v1.jsonl"
+    v2_path = Path(__file__).parent / "../../ins/rdr_inputs_v2.jsonl"
     
     v1_inputs = load_jsonl(v1_path)
     v2_inputs = load_jsonl(v2_path)

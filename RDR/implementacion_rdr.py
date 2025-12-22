@@ -57,7 +57,11 @@ class GRDRRule:
                     return result
 
             # acción de la regla base
-            action_result = self.action(input_case) or {}
+            action_result = self.action(input_case)
+            
+            # si la acción no devuelve nada (nodos intermedios sin conclusión), no devolver resultado
+            if not action_result:
+                return None
 
             # extracción de confidencias
             input_conf, provenance = _gather_confidences(input_case)
