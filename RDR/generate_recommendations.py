@@ -64,19 +64,19 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any])
     
     # Lógica de recomendaciones basada en afinidad y orden
     if affinity == "high" and monolayer in ["stable", "ordered", "semi-ordered"]:
-        recommendations.append("✓ Formulación ÓPTIMA para uso terapéutico")
-        recommendations.append("✓ Proceder con ensayos de caracterización y estabilidad")
+        recommendations.append("Formulación ÓPTIMA para uso terapéutico")
+        recommendations.append("Proceder con ensayos de caracterización y estabilidad")
         optimizations.append("Validar tiempo de vida útil (shelf-life) a temperatura controlada")
         optimizations.append("Confirmar reproducibilidad del autoensamblaje en lotes")
         
     elif affinity == "high" and monolayer in ["fluid", "disordered"]:
-        recommendations.append("⚠ Alta afinidad pero estructura de monocapa subóptima")
+        recommendations.append("Alta afinidad pero estructura de monocapa subóptima")
         warnings.append("Riesgo de reorganización estructural durante almacenamiento")
         optimizations.append("Considerar crosslinking químico para estabilizar monocapa")
         optimizations.append("Evaluar condiciones de temperatura/pH para mejorar orden")
         
     elif affinity == "moderate":
-        recommendations.append("◐ Formulación viable con optimizaciones recomendadas")
+        recommendations.append("Formulación viable con optimizaciones recomendadas")
         if monolayer in ["stable", "semi-ordered"]:
             optimizations.append("Aumentar concentración de ligando para mejorar cobertura")
             optimizations.append("Probar modificaciones químicas del ligando (PEGylation, acetilación)")
@@ -86,14 +86,14 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any])
             optimizations.append("Considerar coadyuvantes estabilizadores")
     
     elif affinity == "low":
-        warnings.append("✗ Baja afinidad ligando-nanopartícula detectada")
+        warnings.append("Baja afinidad ligando-nanopartícula detectada")
         recommendations.append("NO RECOMENDADO para producción sin modificaciones")
         optimizations.append("CRÍTICO: Rediseñar funcionalización de superficie")
         optimizations.append("Evaluar ligandos alternativos con mejor afinidad")
         optimizations.append("Considerar cambio de estrategia de conjugación")
         
     else:  # unknown
-        warnings.append("⚠ Datos insuficientes para predicción confiable")
+        warnings.append("Datos insuficientes para predicción confiable")
         recommendations.append("Requiere caracterización experimental adicional")
         optimizations.append("Medir zeta potential para determinar carga superficial")
         optimizations.append("Análisis de composición química del recubrimiento")
@@ -132,21 +132,21 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any])
 def _decision_produccion(affinity: str, monolayer: str, confidence: float) -> str:
     """Genera decisión final go/no-go para producción."""
     if confidence < 0.6:
-        return "❓ REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+        return "REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
     
     if affinity == "high" and monolayer in ["stable", "ordered", "semi-ordered"]:
-        return "✓ APROBADO para producción - Proceder con validación de lotes"
+        return "APROBADO para producción - Proceder con validación de lotes"
     
     if affinity == "high" and monolayer in ["fluid", "disordered"]:
-        return "⚠ CONDICIONAL - Validar estabilidad antes de escalar"
+        return "CONDICIONAL - Validar estabilidad antes de escalar"
     
     if affinity == "moderate" and monolayer in ["stable", "semi-ordered"]:
-        return "◐ VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+        return "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     
     if affinity == "low" or monolayer == "unstable":
-        return "✗ NO APROBADO - Rediseño necesario"
+        return "NO APROBADO - Rediseño necesario"
     
-    return "⚠ REVISAR - Consultar con equipo de formulación"
+    return "REVISAR - Consultar con equipo de formulación"
 
 
 def generate_batch_report(predictions_path: str, output_path: str):
@@ -202,10 +202,10 @@ def generate_batch_report(predictions_path: str, output_path: str):
         f.write("=" * 80 + "\n\n")
         
         f.write(f"Total de fármacos analizados: {len(reports)}\n")
-        f.write(f"  ✓ Aprobados: {stats['aprobados']}\n")
-        f.write(f"  ◐ Condicionales/Viables: {stats['condicionales']}\n")
-        f.write(f"  ✗ Rechazados: {stats['rechazados']}\n")
-        f.write(f"  ❓ Requieren validación: {stats['requieren_validacion']}\n")
+        f.write(f"Aprobados: {stats['aprobados']}\n")
+        f.write(f"Condicionales/Viables: {stats['condicionales']}\n")
+        f.write(f"Rechazados: {stats['rechazados']}\n")
+        f.write(f"Requieren validación: {stats['requieren_validacion']}\n")
         f.write("\n" + "=" * 80 + "\n\n")
         
         for i, report in enumerate(reports, 1):
@@ -217,8 +217,8 @@ def generate_batch_report(predictions_path: str, output_path: str):
             f.write(f"Confianza: {report['confianza_prediccion']}\n\n")
             
             f.write(f"RESULTADOS:\n")
-            f.write(f"  • Afinidad: {report['resultados']['afinidad']}\n")
-            f.write(f"  • Monocapa: {report['resultados']['orden_monocapa']}\n\n")
+            f.write(f"  - Afinidad: {report['resultados']['afinidad']}\n")
+            f.write(f"  - Monocapa: {report['resultados']['orden_monocapa']}\n\n")
             
             f.write(f"RECOMENDACIONES:\n")
             for rec in report['recomendaciones']:
@@ -232,7 +232,7 @@ def generate_batch_report(predictions_path: str, output_path: str):
             
             f.write(f"OPTIMIZACIONES SUGERIDAS:\n")
             for opt in report['optimizaciones_sugeridas']:
-                f.write(f"  • {opt}\n")
+                f.write(f"  - {opt}\n")
             f.write("\n")
             
             f.write(f"DECISIÓN DE PRODUCCIÓN:\n")
@@ -247,8 +247,8 @@ def generate_batch_report(predictions_path: str, output_path: str):
             "reportes": reports
         }, f, ensure_ascii=False, indent=2)
     
-    print(f"✓ Reporte generado: {output_path}")
-    print(f"✓ Versión JSON: {json_output}")
+    print(f"Reporte generado: {output_path}")
+    print(f"Versión JSON: {json_output}")
     print(f"\nResumen: {stats['aprobados']} aprobados, {stats['condicionales']} condicionales, "
           f"{stats['rechazados']} rechazados, {stats['requieren_validacion']} requieren validación")
 
