@@ -74,30 +74,58 @@ def attach_rules(root: Any) -> None:
     )
 
     # Nodos intermedios
-    rule_material = GRDRRule(name="Material Node", condition=lambda inp: True, action=lambda inp: {})
+
+    rule_material = GRDRRule(
+        name="Material Node",
+        condition=lambda inp: inp.get("nanoparticle", {}).get("type", "unknown") != "unknown",
+        action=lambda inp: {"predicted_affinity": "low", "monolayer_order": "none", "rule_confidence": 0.3}
+    )
     rule_material.add_exception(rule_lipid_general)
     rule_material.add_exception(rule_polymeric)
     rule_material.add_exception(rule_metallic)
 
-    rule_ligand_props = GRDRRule(name="Ligand Property Node", condition=lambda inp: True, action=lambda inp: {})
+
+    rule_ligand_props = GRDRRule(
+        name="Ligand Property Node",
+        condition=lambda inp: inp.get("ligand", {}).get("type", "unknown") != "unknown",
+        action=lambda inp: {"predicted_affinity": ("moderate" if inp.get("ligand", {}).get("polarity") == "polar" else "low"),
+            "monolayer_order": ("ordered" if inp.get("ligand", {}).get("polarity") == "polar" else "fluid"),
+            "rule_confidence": 0.4}
+    )
     rule_ligand_props.add_exception(rule_hydrophobic)
     rule_ligand_props.add_exception(rule_hydrophilic)
 
-    rule_biomolecule = GRDRRule(name="Biomolecule Node", condition=lambda inp: True, action=lambda inp: {})
+
+    rule_biomolecule = GRDRRule(
+        name="Biomolecule Node",
+        condition=lambda inp: inp.get("biomolecule", {}).get("type", "unknown") != "unknown",
+        action=lambda inp: {"predicted_affinity": "moderate", "monolayer_order": "ordered", "rule_confidence": 0.5}
+    )
     rule_biomolecule.add_exception(rule_rna_binding)
 
-    rule_surface = GRDRRule(name="Surface Feature Node", condition=lambda inp: True, action=lambda inp: {})
+
+    rule_surface = GRDRRule(
+        name="Surface Feature Node",
+        condition=lambda inp: inp.get("surface", {}).get("material", "unknown") not in ["unknown", None],
+        action=lambda inp: {"predicted_affinity": ("low" if inp["surface"]["material"] == "peg" else "moderate"), "monolayer_order": "fluid", "rule_confidence": 0.45}
+    )
     rule_surface.add_exception(rule_pegylated)
 
-    rule_charge = GRDRRule(name="Charge Interaction Node", condition=lambda inp: True, action=lambda inp: {})
+
+    rule_charge = GRDRRule(name="Charge Interaction Node",
+        condition=lambda inp: inp.get("nanoparticle", {}).get("surface_charge", "unknown") not in ["unknown", None] or
+            inp.get("surface", {}).get("charge", "unknown") not in ["unknown", None],
+        action=lambda inp: {"predicted_affinity": "moderate", "monolayer_order": "partial", "rule_confidence": 0.4}
+    )
     rule_charge.add_exception(rule_electro)
     rule_charge.add_exception(rule_lipidic)
 
+
+
     # Conectar nodos al root
-    # Orden de prioridad: carga/biomoléculas > superficie > polaridad ligando > material genérico
-    # Razón: interacciones electrostáticas y biomoleculares suelen dominar sobre tipo de material
-    root.add_exception(rule_charge)        # 1. Interacciones electrostáticas (carga opuesta)
-    root.add_exception(rule_biomolecule)   # 2. Biomoléculas específicas (RNA, DNA)
-    root.add_exception(rule_surface)       # 3. Características superficiales (PEG, funcionalización)
-    root.add_exception(rule_ligand_props)  # 4. Propiedades del ligando (hidrofóbico/hidrofílico)
-    root.add_exception(rule_material)      # 5. Tipo de material (lipídico, polimérico, metálico)
+    root.add_exception(rule_biomolecule)   # 1. especificidad biológica
+    root.add_exception(rule_material)      # 2. estructura dominante
+    root.add_exception(rule_charge)        # 3. modulador electrostático
+    root.add_exception(rule_surface)       # 4. PEG, coatings
+    root.add_exception(rule_ligand_props)  # 5. propiedades finas
+

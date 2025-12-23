@@ -7,13 +7,13 @@ from collections import Counter
 import pandas as pd
 
 # Cargar dataset original
-DATASET_PATH = Path("../datasets/dataset_FINAL2.csv")
+DATASET_PATH = Path("../../../datasets/dataset_FINAL2.csv")
 df_original = pd.read_csv(DATASET_PATH, encoding='utf-8')
 df_original['Code'] = df_original['Code'].astype(str).str.strip()
 
 # Cargar v3 y v4
-V3_PATH = Path("ins/rdr_inputs_v3.jsonl")
-V4_PATH = Path("ins/rdr_inputs_v4.jsonl")
+V3_PATH = Path("../../ins/rdr_inputs_v3.jsonl")
+V4_PATH = Path("../../ins/rdr_inputs_v4.jsonl")
 
 entries_v3 = []
 with open(V3_PATH, 'r', encoding='utf-8') as f:
@@ -131,7 +131,7 @@ if new_cases_conf:
 
 # Guardar cambios a CSV
 changes_df = pd.DataFrame(changes)
-changes_df.to_csv('outs/surface_charge_v3_v4_improvements.csv', index=False, encoding='utf-8')
+changes_df.to_csv('../surface_charge_v3_v4_improvements.csv', index=False, encoding='utf-8')
 
 print("\n" + "="*80)
 print("✅ RESUMEN")
