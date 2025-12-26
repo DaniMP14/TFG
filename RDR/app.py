@@ -170,7 +170,8 @@ class RDRApp:
                 
                 # Recommend
                 context = drug_input.get("context", {})
-                rec = generate_recommendation(prediction, context)
+                # Pass drug_input as full_case for confidence adjustment
+                rec = generate_recommendation(prediction, context, full_case=drug_input)
                 
                 # Update stats
                 decision = rec.get("decision_produccion", "")
@@ -190,8 +191,13 @@ class RDRApp:
                 "reportes": reports
             }
             
+            # Save to file
+            output_file = Path(__file__).parent / "rdr_full_evaluation_results.json"
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(final_json, f, indent=2, ensure_ascii=False)
+            
             json_str = json.dumps(final_json, indent=2, ensure_ascii=False)
-            self.log(json_str)
+            self.log(f"Results saved to: {output_file}\n\n" + json_str)
             
         except Exception as e:
             self.log(f"Error in full evaluation: {e}")

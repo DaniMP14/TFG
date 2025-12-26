@@ -37,10 +37,18 @@ def attach_rules(root: Any) -> None:
         action=lambda inp: {"predicted_affinity": "moderate", "monolayer_order": "fluid", "rule_confidence": 0.7}
     )
 
+    """ REGLA ANTIGUA
     rule_hydrophobic = GRDRRule(
         name="Hydrophobic Interaction",
         condition=lambda inp: inp.get("ligand", {}).get("polarity") == "nonpolar" and inp.get("nanoparticle", {}).get("type") not in ("lipid-based",),
         action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "disordered", "rule_confidence": 0.85}
+    )
+    """
+
+    rule_hydrophobic = GRDRRule(
+        name="Hydrophobic Adsorption",
+        condition=lambda inp: inp.get("ligand", {}).get("polarity") == "nonpolar" and inp.get("nanoparticle", {}).get("type") in ("metallic", "polymeric"),
+        action=lambda inp: {"predicted_affinity": "moderate", "monolayer_order": "disordered", "rule_confidence": 0.75}
     )
 
     rule_hydrophilic = GRDRRule(
@@ -73,6 +81,31 @@ def attach_rules(root: Any) -> None:
         action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "semi-ordered", "rule_confidence": 0.92}
     )
 
+    rule_spio = GRDRRule(
+        name="SPIO Protein Corona Adsorption",
+        condition=lambda inp: inp.get("nanoparticle", {}).get("type") == "metallic" and "spio" in inp.get("context", {}).get("display_name", "").lower(),
+        action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "ordered", "rule_confidence": 0.95}
+    )
+
+    rule_liposomal_rna = GRDRRule(
+        name="Liposomal RNA Complexation",
+        condition=lambda inp: inp.get("nanoparticle", {}).get("type") in ("lipid-based", "liposomal") and inp.get("biomolecule", {}).get("type") == "RNA",
+        action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "stable", "rule_confidence": 0.9}
+    )
+
+    rule_polymeric_peg = GRDRRule(
+        name="PEGylated Polymeric Stabilization",
+        condition=lambda inp: inp.get("nanoparticle", {}).get("type") == "polymeric" and inp.get("surface", {}).get("material") == "peg",
+        action=lambda inp: {"predicted_affinity": "moderate", "monolayer_order": "ordered", "rule_confidence": 0.85}
+    )
+
+    rule_antibody_targeting = GRDRRule(
+        name="Antibody-Mediated Targeting",
+        condition=lambda inp: inp.get("ligand", {}).get("type") == "antibody",
+        action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "ordered", "rule_confidence": 0.9}
+    )
+
+
     # Nodos intermedios
 
     rule_material = GRDRRule(
@@ -80,9 +113,10 @@ def attach_rules(root: Any) -> None:
         condition=lambda inp: inp.get("nanoparticle", {}).get("type", "unknown") != "unknown",
         action=lambda inp: {"predicted_affinity": "low", "monolayer_order": "none", "rule_confidence": 0.3}
     )
-    rule_material.add_exception(rule_lipid_general)
-    rule_material.add_exception(rule_polymeric)
+    rule_material.add_exception(rule_spio) # refina metallic
     rule_material.add_exception(rule_metallic)
+    rule_material.add_exception(rule_polymeric)
+    rule_material.add_exception(rule_lipid_general)
 
 
     rule_ligand_props = GRDRRule(
@@ -94,6 +128,7 @@ def attach_rules(root: Any) -> None:
     )
     rule_ligand_props.add_exception(rule_hydrophobic)
     rule_ligand_props.add_exception(rule_hydrophilic)
+    rule_ligand_props.add_exception(rule_antibody_targeting)
 
 
     rule_biomolecule = GRDRRule(
@@ -102,6 +137,7 @@ def attach_rules(root: Any) -> None:
         action=lambda inp: {"predicted_affinity": "moderate", "monolayer_order": "ordered", "rule_confidence": 0.5}
     )
     rule_biomolecule.add_exception(rule_rna_binding)
+    rule_biomolecule.add_exception(rule_liposomal_rna)
 
 
     rule_surface = GRDRRule(
@@ -110,6 +146,7 @@ def attach_rules(root: Any) -> None:
         action=lambda inp: {"predicted_affinity": ("low" if inp["surface"]["material"] == "peg" else "moderate"), "monolayer_order": "fluid", "rule_confidence": 0.45}
     )
     rule_surface.add_exception(rule_pegylated)
+    rule_surface.add_exception(rule_polymeric_peg)
 
 
     rule_charge = GRDRRule(name="Charge Interaction Node",

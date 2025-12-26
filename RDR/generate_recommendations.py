@@ -9,16 +9,40 @@ Uso:
     python RDR/generate_recommendations.py
 """
 import json
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
 
-def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any]) -> Dict[str, Any]:
+def confidence_adjustment(current_conf: float, input_case: Dict[str, Any]) -> float:
+    """
+    Ajuste heurístico de confianza basado en coherencia física y biológica.
+    No altera la regla RDR, pero refina la confianza final del sistema.
+    """
+    conf = current_conf
+    
+    # Asegurar acceso seguro a diccionarios anidados
+    np_type = input_case.get("nanoparticle", {}).get("type", "")
+    surf_mat = input_case.get("surface", {}).get("material", "")
+    lig_type = input_case.get("ligand", {}).get("type", "")
+
+    # Refuerzo por coherencia material-superficie (físicamente más predecible)
+    if np_type and surf_mat and np_type == surf_mat:
+        conf += 0.05
+
+    # Refuerzo por ligando biológico (interacciones más específicas/estudiadas)
+    if lig_type in ("antibody", "peptide", "protein"):
+        conf += 0.05
+
+    return min(conf, 0.99)
+
+
+def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any], full_case: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     """
     Genera recomendación estructurada desde la predicción RDR.
     
     Args:
         prediction: salida del RDR (predicted_affinity, monolayer_order, rule_confidence, etc.)
         context: información del fármaco (display_name, source_code, semantic_type)
+        full_case: (Opcional) El caso de entrada completo para ajustes heurísticos de confianza.
     
     Returns:
         Dict con recomendaciones accionables
@@ -36,6 +60,11 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any])
     monolayer = action.get("monolayer_order", "unknown")
     rule_conf = float(action.get("rule_confidence", 0.0))
     combined_conf = float(prediction.get("prediction_confidence", rule_conf))
+    
+    # Aplicar ajuste heurístico si tenemos el caso completo
+    if full_case:
+        combined_conf = confidence_adjustment(combined_conf, full_case)
+        
     rule_name = prediction.get("rule", action.get("rule", "No rule matched"))
     
     # Interpretación de afinidad
@@ -108,7 +137,7 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any])
         optimizations.append("Validar temperatura de transición de fase")
     
     # Evaluación de confianza
-    confidence_level = "Alta" if combined_conf >= 0.9 else "Media" if combined_conf >= 0.7 else "Baja"
+    confidence_level = "Alta" if combined_conf >= 0.8 else "Media" if combined_conf >= 0.4 else "Baja"
     
     # Construir reporte estructurado
     report = {
@@ -130,23 +159,32 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any])
 
 
 def _decision_produccion(affinity: str, monolayer: str, confidence: float) -> str:
-    """Genera decisión final go/no-go para producción."""
-    if confidence < 0.6:
-        return "REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
-    
+    """
+    Decisión final go/no-go para producción.
+    La confianza modula, pero no anula conclusiones fuertes.
+    """
+
+    # Caso 1: Predicción fuerte → aprobar incluso con confianza media
     if affinity == "high" and monolayer in ["stable", "ordered", "semi-ordered"]:
-        return "APROBADO para producción - Proceder con validación de lotes"
-    
-    if affinity == "high" and monolayer in ["fluid", "disordered"]:
-        return "CONDICIONAL - Validar estabilidad antes de escalar"
-    
-    if affinity == "moderate" and monolayer in ["stable", "semi-ordered"]:
-        return "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
-    
+        if confidence >= 0.4:
+            return "APROBADO para producción - Proceder con validación de lotes"
+        else:
+            return "CONDICIONAL - Validar estabilidad experimental"
+
+    # Caso 2: Predicción buena pero no óptima
+    if affinity == "moderate":
+        if confidence >= 0.4:
+            return "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+        else:
+            return "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+
+    # Caso 3: Señales claramente negativas
     if affinity == "low" or monolayer == "unstable":
         return "NO APROBADO - Rediseño necesario"
-    
-    return "REVISAR - Consultar con equipo de formulación"
+
+    # Caso 4: Información insuficiente
+    return "REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+
 
 
 def generate_batch_report(predictions_path: str, output_path: str):
@@ -181,7 +219,8 @@ def generate_batch_report(predictions_path: str, output_path: str):
             else:
                 prediction = {}
         
-        report = generate_recommendation(prediction, context)
+        # Pasamos 'pred' como full_case porque contiene nanoparticle, ligand, etc.
+        report = generate_recommendation(prediction, context, full_case=pred)
         reports.append(report)
         
         # Estadísticas
@@ -276,7 +315,8 @@ def generate_single_drug_report(drug_input: Dict[str, Any]) -> str:
         }
     
     context = drug_input.get("context", {})
-    report = generate_recommendation(prediction, context)
+    # Pasamos drug_input como full_case
+    report = generate_recommendation(prediction, context, full_case=drug_input)
     
     # Formatear para output de consola
     output = f"""
