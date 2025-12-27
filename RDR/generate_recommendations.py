@@ -35,6 +35,51 @@ def confidence_adjustment(current_conf: float, input_case: Dict[str, Any]) -> fl
     return min(conf, 0.99)
 
 
+def compute_support_score(result: Dict[str, Any], input_case: Optional[Dict[str, Any]]) -> float:
+    """
+    Calcula un score de viabilidad para producción (0.0 - 1.0).
+    Combina la calidad de la predicción (afinidad/monocapa) con 
+    características deseables del material (tipo de ligando/NP).
+    """
+    score = 0.0
+
+    # Extraer valores de predicción
+    if isinstance(result.get("output"), dict):
+        action = result.get("output", {})
+    else:
+        action = result
+
+    affinity = action.get("predicted_affinity", "unknown")
+    monolayer = action.get("monolayer_order", "unknown")
+
+    # 1. Afinidad (Max 0.4)
+    if affinity == "high":
+        score += 0.4
+    elif affinity == "moderate":
+        score += 0.2
+
+    # 2. Orden de monocapa (Max 0.3)
+    if monolayer in ["ordered", "stable"]:
+        score += 0.3
+    elif monolayer in ["partial", "semi-ordered"]:
+        score += 0.15
+
+    # 3. Refuerzos semánticos del input (Max 0.2)
+    if input_case:
+        ligand_type = input_case.get("ligand", {}).get("type", "")
+        np_type = input_case.get("nanoparticle", {}).get("type", "")
+
+        # Ligandos biológicos o estabilizadores conocidos
+        if ligand_type in ["antibody", "peptide", "peg", "protein"]:
+            score += 0.1
+
+        # Núcleos bien caracterizados
+        if np_type in ["metallic", "lipid-based", "gold", "silver"]:
+            score += 0.1
+
+    return min(score, 1.0)
+
+
 def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any], full_case: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     """
     Genera recomendación estructurada desde la predicción RDR.
@@ -64,6 +109,9 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any],
     # Aplicar ajuste heurístico si tenemos el caso completo
     if full_case:
         combined_conf = confidence_adjustment(combined_conf, full_case)
+    
+    # Calcular score de viabilidad (Support Score)
+    support_score = compute_support_score(prediction, full_case)
         
     rule_name = prediction.get("rule", action.get("rule", "No rule matched"))
     
@@ -147,43 +195,40 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any],
         "confianza_prediccion": f"{combined_conf:.2%} ({confidence_level})",
         "resultados": {
             "afinidad": affinity_interpretation.get(affinity, affinity),
-            "orden_monocapa": monolayer_interpretation.get(monolayer, monolayer)
+            "orden_monocapa": monolayer_interpretation.get(monolayer, monolayer),
+            "score_viabilidad": round(support_score, 2)
         },
         "recomendaciones": recommendations,
         "advertencias": warnings if warnings else ["Ninguna advertencia crítica"],
         "optimizaciones_sugeridas": optimizations if optimizations else ["No se requieren optimizaciones adicionales"],
-        "decision_produccion": _decision_produccion(affinity, monolayer, combined_conf)
+        "decision_produccion": _decision_produccion(affinity, monolayer, combined_conf, support_score)
     }
     
     return report
 
 
-def _decision_produccion(affinity: str, monolayer: str, confidence: float) -> str:
+def _decision_produccion(affinity: str, monolayer: str, confidence: float, score: float = 0.0) -> str:
     """
     Decisión final go/no-go para producción.
-    La confianza modula, pero no anula conclusiones fuertes.
+    El score representa la coherencia global del caso.
+    La confianza modula la fiabilidad de la inferencia.
     """
 
-    # Caso 1: Predicción fuerte → aprobar incluso con confianza media
-    if affinity == "high" and monolayer in ["stable", "ordered", "semi-ordered"]:
-        if confidence >= 0.4:
-            return "APROBADO para producción - Proceder con validación de lotes"
-        else:
-            return "CONDICIONAL - Validar estabilidad experimental"
-
-    # Caso 2: Predicción buena pero no óptima
-    if affinity == "moderate":
-        if confidence >= 0.4:
-            return "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
-        else:
-            return "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-
-    # Caso 3: Señales claramente negativas
+    # Rechazo claro: patrón negativo explícito
     if affinity == "low" or monolayer == "unstable":
         return "NO APROBADO - Rediseño necesario"
 
-    # Caso 4: Información insuficiente
-    return "REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+    # Caso fuerte: score alto y confianza suficiente
+    if score >= 0.7 and confidence >= 0.4:
+        return "APROBADO para producción - Proceder con validación de lotes"
+
+    # Caso razonable pero incompleto
+    if score >= 0.45:
+        return "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+
+    # Caso débil
+    return "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
+
 
 
 
@@ -257,7 +302,8 @@ def generate_batch_report(predictions_path: str, output_path: str):
             
             f.write(f"RESULTADOS:\n")
             f.write(f"  - Afinidad: {report['resultados']['afinidad']}\n")
-            f.write(f"  - Monocapa: {report['resultados']['orden_monocapa']}\n\n")
+            f.write(f"  - Monocapa: {report['resultados']['orden_monocapa']}\n")
+            f.write(f"  - Score Viabilidad: {report['resultados'].get('score_viabilidad', 'N/A')}\n\n")
             
             f.write(f"RECOMENDACIONES:\n")
             for rec in report['recomendaciones']:
@@ -330,6 +376,7 @@ Confianza: {report['confianza_prediccion']}
 RESULTADOS:
   Afinidad: {report['resultados']['afinidad']}
   Monocapa: {report['resultados']['orden_monocapa']}
+  Score Viabilidad: {report['resultados'].get('score_viabilidad', 'N/A')}
 
 RECOMENDACIONES:
 """

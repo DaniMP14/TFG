@@ -93,6 +93,31 @@ def attach_rules(root: Any) -> None:
         action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "stable", "rule_confidence": 0.9}
     )
 
+    rule_targeted_biomolecule = GRDRRule(
+        name="Targeted Biomolecule Interaction",
+        condition=lambda inp: (
+            inp.get("ligand", {}).get("type") in ["antibody", "peptide"] or
+            any(term in inp.get("context", {}).get("display_name", "").lower() for term in ["targeting", "directed", "anti-"])
+        ),
+        action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "ordered", "rule_confidence": 0.85}
+    )
+
+    rule_protein_carrier = GRDRRule(
+        name="Protein Carrier / Albumin-bound",
+        condition=lambda inp: (
+            inp.get("ligand", {}).get("type") in ["protein", "albumin"] or
+            "albumin" in inp.get("context", {}).get("display_name", "").lower()
+        ),
+        action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "stable", "rule_confidence": 0.88}
+    )
+
+    # TODO: comprobar si añadimos RNA antes de acabar con el RDR
+    rule_nucleic_acid_general = GRDRRule(
+        name="General Nucleic Acid (DNA/Oligo)",
+        condition=lambda inp: inp.get("biomolecule", {}).get("type") in ["DNA", "plasmid", "oligonucleotide", "nucleic acid", "aptamer"] and inp.get("nanoparticle", {}).get("type") not in ["lipid-based"],
+        action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "semi-ordered", "rule_confidence": 0.82}
+    )
+
     rule_polymeric_peg = GRDRRule(
         name="PEGylated Polymeric Stabilization",
         condition=lambda inp: inp.get("nanoparticle", {}).get("type") == "polymeric" and inp.get("surface", {}).get("material") == "peg",
@@ -138,6 +163,9 @@ def attach_rules(root: Any) -> None:
     )
     rule_biomolecule.add_exception(rule_rna_binding)
     rule_biomolecule.add_exception(rule_liposomal_rna)
+    rule_biomolecule.add_exception(rule_targeted_biomolecule)
+    rule_biomolecule.add_exception(rule_protein_carrier)
+    rule_biomolecule.add_exception(rule_nucleic_acid_general)
 
 
     rule_surface = GRDRRule(
