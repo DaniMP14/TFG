@@ -102,7 +102,7 @@ class RDRApp:
         lbl_full = ttk.Label(frame_full, text="Generate Full Report (dataset_FINAL2.csv)", font=("Segoe UI", 12))
         lbl_full.pack(pady=(0, 10))
         
-        desc_full = ttk.Label(frame_full, text="This will evaluate all entries in the dataset and generate a JSON report similar to rdr_reporte_v4.json.\nThis process may take a moment.", wraplength=600)
+        desc_full = ttk.Label(frame_full, text="This will evaluate all entries in the dataset and generate a JSON report similar to rdr_reporte_INICIAL.json.\nThis process may take a moment.", wraplength=600)
         desc_full.pack(pady=(0, 20))
         
         btn_full = ttk.Button(frame_full, text="Run Full Evaluation", command=self.start_full_evaluation_thread)
@@ -158,7 +158,7 @@ class RDRApp:
                 # Extract
                 drug_input = row_to_input(row)
                 
-                # Evaluate
+                # Evaluate (single conclusion)
                 prediction = rule_root.evaluate(drug_input)
                 if prediction is None:
                     prediction = {
@@ -175,11 +175,11 @@ class RDRApp:
                 
                 # Update stats
                 decision = rec.get("decision_produccion", "")
-                if "APROBADO" in decision:
+                if "APROBADO" in decision and "NO APROBADO" not in decision:
                     stats["aprobados"] += 1
                 elif "VIABLE" in decision:
                     stats["condicionales"] += 1
-                elif "RECHAZADO" in decision:
+                elif "NO APROBADO" in decision:
                     stats["rechazados"] += 1
                 else:
                     stats["requieren_validacion"] += 1
@@ -196,8 +196,57 @@ class RDRApp:
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(final_json, f, indent=2, ensure_ascii=False)
             
-            json_str = json.dumps(final_json, indent=2, ensure_ascii=False)
-            self.log(f"Results saved to: {output_file}\n\n" + json_str)
+            # Generate readable text report
+            lines = []
+            lines.append("=== REPORTE DE EVALUACIÓN MASIVA ===")
+            lines.append(f"Resultados guardados en: {output_file}")
+            lines.append("")
+            lines.append("--- RESUMEN ESTADÍSTICO ---")
+            lines.append(f"Total Evaluados: {total}")
+            lines.append(f"  Aprobados: {stats['aprobados']}")
+            lines.append(f"  Viables (Condicional): {stats['condicionales']}")
+            lines.append(f"  Rechazados: {stats['rechazados']}")
+            lines.append(f"  Requieren Validación: {stats['requieren_validacion']}")
+            lines.append("")
+            lines.append("--- DETALLE DE EVALUACIONES ---")
+            
+            for i, rep in enumerate(reports):
+                lines.append("=" * 80)
+                lines.append(f"ANÁLISIS RDR - {rep.get('farmaco', 'Unknown')}")
+                lines.append("=" * 80)
+                lines.append(f"Código: {rep.get('codigo_fuente', 'N/A')}")
+                lines.append(f"Regla: {rep.get('regla_aplicada', 'N/A')}")
+                lines.append(f"Confianza: {rep.get('confianza_prediccion', 'N/A')}")
+                lines.append("")
+                
+                res = rep.get('resultados', {})
+                lines.append("RESULTADOS:")
+                lines.append(f"  Afinidad: {res.get('afinidad', 'N/A')}")
+                lines.append(f"  Monocapa: {res.get('orden_monocapa', 'N/A')}")
+                lines.append(f"  Score Viabilidad: {res.get('score_viabilidad', 'N/A')}")
+                lines.append("")
+                
+                lines.append("RECOMENDACIONES:")
+                for rec in rep.get('recomendaciones', []):
+                    lines.append(f"  {rec}")
+                lines.append("")
+                
+                lines.append("ADVERTENCIAS:")
+                for warn in rep.get('advertencias', []):
+                    lines.append(f"  {warn}")
+                lines.append("")
+                
+                lines.append("OPTIMIZACIONES:")
+                for opt in rep.get('optimizaciones_sugeridas', []):
+                    lines.append(f"  • {opt}")
+                lines.append("")
+                
+                lines.append(f"DECISIÓN: {rep.get('decision_produccion', 'N/A')}")
+                lines.append("=" * 80)
+                lines.append("")
+            
+            final_text = "\n".join(lines)
+            self.log(final_text)
             
         except Exception as e:
             self.log(f"Error in full evaluation: {e}")
@@ -251,11 +300,11 @@ class RDRApp:
                 row = self.df[self.df['Display Name'].str.contains(query, case=False, na=False)]
             
             if row.empty:
-                self.log(f"❌ No results found for '{query}'.\n\nTip: Try using the 'Custom Input' tab to analyze this drug manually.")
+                self.log(f"No results found for '{query}'.\n\nTip: Try using the 'Custom Input' tab to analyze this drug manually.")
                 return
             
             if len(row) > 1:
-                self.log(f"⚠ Multiple matches found ({len(row)}). Using the first one: {row.iloc[0]['Display Name']}\n\nAnalyzing...")
+                self.log(f"Multiple matches found ({len(row)}). Using the first one: {row.iloc[0]['Display Name']}\n\nAnalyzing...")
                 self.root.update()
                 
             drug_input = row_to_input(row.iloc[0])

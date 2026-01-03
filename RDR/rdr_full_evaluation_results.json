@@ -1,92 +1,100 @@
 {
   "estadisticas": {
-    "aprobados": 22,
-    "condicionales": 21,
-    "rechazados": 0,
-    "requieren_validacion": 85
+    "aprobados": 34,
+    "condicionales": 82,
+    "rechazados": 9,
+    "requieren_validacion": 3
   },
   "reportes": [
     {
       "farmaco": "Nanoparticle-encapsulated Doxorubicin Hydrochloride",
       "codigo_fuente": "C102875",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "20.42% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "30.28% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Gemcitabine Hydrochloride Emulsion",
-      "codigo_fuente": "C105613",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "20.00% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Liposomal HPV-16 E6/E7 Multipeptide Vaccine PDS0101",
-      "codigo_fuente": "C111688",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "48.67% (Media)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
       "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
-      "farmaco": "DACH-Platin Micelle NC-4016",
-      "codigo_fuente": "C113175",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "41.58% (Media)",
+      "farmaco": "Gemcitabine Hydrochloride Emulsion",
+      "codigo_fuente": "C105613",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "29.60% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
+      ],
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+    },
+    {
+      "farmaco": "Liposomal HPV-16 E6/E7 Multipeptide Vaccine PDS0101",
+      "codigo_fuente": "C111688",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "79.23% (Media)",
+      "resultados": {
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.9
+      },
+      "recomendaciones": [
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
+      ],
+      "advertencias": [
+        "Ninguna advertencia crítica"
+      ],
+      "optimizaciones_sugeridas": [
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
+      ],
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
+    },
+    {
+      "farmaco": "DACH-Platin Micelle NC-4016",
+      "codigo_fuente": "C113175",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "68.20% (Media)",
+      "resultados": {
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.65
+      },
+      "recomendaciones": [
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
+      ],
+      "advertencias": [
+        "Ninguna advertencia crítica"
+      ],
+      "optimizaciones_sugeridas": [
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
       "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
@@ -97,7 +105,8 @@
       "confianza_prediccion": "60.60% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -118,7 +127,8 @@
       "confianza_prediccion": "33.50% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -131,7 +141,7 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Carbon Nanoparticle-based Formulation",
@@ -140,7 +150,8 @@
       "confianza_prediccion": "19.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -152,7 +163,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Patisiran",
@@ -161,7 +172,8 @@
       "confianza_prediccion": "20.42% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -173,7 +185,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Pegylated Liposomal Nanoparticle-based Docetaxel Prodrug MNK-010",
@@ -182,7 +194,8 @@
       "confianza_prediccion": "47.13% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa fluida con reorganización dinámica"
+        "orden_monocapa": "Monocapa fluida con reorganización dinámica",
+        "score_viabilidad": 0.25
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas",
@@ -196,28 +209,30 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Nanoparticle Albumin-bound Thiocolchicine Dimer nab-5404",
       "codigo_fuente": "C116890",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "34.92% (Baja)",
+      "regla_aplicada": "Protein Carrier / Albumin-bound",
+      "confianza_prediccion": "61.45% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Electrokinetically Modified Water",
@@ -226,7 +241,8 @@
       "confianza_prediccion": "18.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -238,7 +254,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nanoparticle-based Paclitaxel Suspension",
@@ -247,7 +263,8 @@
       "confianza_prediccion": "17.75% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -259,7 +276,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nanocell-encapsulated miR-16-based microRNA Mimic",
@@ -268,7 +285,8 @@
       "confianza_prediccion": "15.00% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -280,7 +298,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Docetaxel-loaded Nanopharmaceutical CRLX301",
@@ -289,7 +307,8 @@
       "confianza_prediccion": "17.75% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -301,7 +320,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Docetaxel Nanoparticle CPC634",
@@ -310,7 +329,8 @@
       "confianza_prediccion": "29.00% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -322,49 +342,53 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Bendamustine-containing Nanoparticle-based Formulation RXDX-107",
       "codigo_fuente": "C124053",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "34.58% (Baja)",
+      "regla_aplicada": "Protein Carrier / Albumin-bound",
+      "confianza_prediccion": "60.87% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "CEBPA-targeting saRNA MTL-CEBPA Liposome",
       "codigo_fuente": "C126800",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "27.00% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "42.40% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Iodine I 124-cRGDY-PEG-C Dots",
@@ -373,7 +397,8 @@
       "confianza_prediccion": "60.60% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -394,7 +419,8 @@
       "confianza_prediccion": "19.85% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -407,28 +433,30 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nab-paclitaxel/Rituximab-coated Nanoparticle AR160",
       "codigo_fuente": "C131213",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "38.75% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "62.38% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Spherical Nucleic Acid Nanoparticle NU-0129",
@@ -437,112 +465,8 @@
       "confianza_prediccion": "15.83% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Ceramide Nanoliposome",
-      "codigo_fuente": "C131434",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "19.92% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Adenovirus-expressing TLR5/TLR5 Agonist Nanoformulation M-VM3",
-      "codigo_fuente": "C131825",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "19.58% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Anti-EphA2 Antibody-directed Liposomal Docetaxel Prodrug MM-310",
-      "codigo_fuente": "C136981",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "39.50% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Belzupacap Sarotalocan",
-      "codigo_fuente": "C137951",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "19.58% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Micellar Nanoparticle-encapsulated Epirubicin",
-      "codigo_fuente": "C139003",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "42.08% (Media)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.67
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -557,13 +481,126 @@
       "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
+      "farmaco": "Ceramide Nanoliposome",
+      "codigo_fuente": "C131434",
+      "regla_aplicada": "Biomolecule Node",
+      "confianza_prediccion": "19.92% (Baja)",
+      "resultados": {
+        "afinidad": "Afinidad moderada ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
+      },
+      "recomendaciones": [
+        "Formulación viable con optimizaciones recomendadas"
+      ],
+      "advertencias": [
+        "Monocapa requiere estabilización adicional"
+      ],
+      "optimizaciones_sugeridas": [
+        "Revisar ratio ligando:nanopartícula",
+        "Considerar coadyuvantes estabilizadores"
+      ],
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+    },
+    {
+      "farmaco": "Adenovirus-expressing TLR5/TLR5 Agonist Nanoformulation M-VM3",
+      "codigo_fuente": "C131825",
+      "regla_aplicada": "Biomolecule Node",
+      "confianza_prediccion": "19.58% (Baja)",
+      "resultados": {
+        "afinidad": "Afinidad moderada ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
+      },
+      "recomendaciones": [
+        "Formulación viable con optimizaciones recomendadas"
+      ],
+      "advertencias": [
+        "Monocapa requiere estabilización adicional"
+      ],
+      "optimizaciones_sugeridas": [
+        "Revisar ratio ligando:nanopartícula",
+        "Considerar coadyuvantes estabilizadores"
+      ],
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+    },
+    {
+      "farmaco": "Anti-EphA2 Antibody-directed Liposomal Docetaxel Prodrug MM-310",
+      "codigo_fuente": "C136981",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "63.65% (Media)",
+      "resultados": {
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.9
+      },
+      "recomendaciones": [
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
+      ],
+      "advertencias": [
+        "Ninguna advertencia crítica"
+      ],
+      "optimizaciones_sugeridas": [
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
+      ],
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
+    },
+    {
+      "farmaco": "Belzupacap Sarotalocan",
+      "codigo_fuente": "C137951",
+      "regla_aplicada": "Biomolecule Node",
+      "confianza_prediccion": "19.58% (Baja)",
+      "resultados": {
+        "afinidad": "Afinidad moderada ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
+      },
+      "recomendaciones": [
+        "Formulación viable con optimizaciones recomendadas"
+      ],
+      "advertencias": [
+        "Monocapa requiere estabilización adicional"
+      ],
+      "optimizaciones_sugeridas": [
+        "Revisar ratio ligando:nanopartícula",
+        "Considerar coadyuvantes estabilizadores"
+      ],
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+    },
+    {
+      "farmaco": "Micellar Nanoparticle-encapsulated Epirubicin",
+      "codigo_fuente": "C139003",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "69.02% (Media)",
+      "resultados": {
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.65
+      },
+      "recomendaciones": [
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
+      ],
+      "advertencias": [
+        "Ninguna advertencia crítica"
+      ],
+      "optimizaciones_sugeridas": [
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
+      ],
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+    },
+    {
       "farmaco": "Lipid Nanoparticle Encapsulated OX40L mRNA-2416",
       "codigo_fuente": "C142137",
       "regla_aplicada": "Liposomal RNA Complexation",
       "confianza_prediccion": "44.60% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -585,7 +622,8 @@
       "confianza_prediccion": "8.00% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -603,86 +641,94 @@
     {
       "farmaco": "Synthetic Vaccine Particles-Rapamycin",
       "codigo_fuente": "C147562",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "38.75% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "62.38% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "MOF Compound RiMO-301",
       "codigo_fuente": "C148280",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "19.17% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "28.23% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.72
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nanoparticle SN-38-encapsulated Micelle Formulation IT-141",
       "codigo_fuente": "C148511",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "27.00% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "41.08% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "HAAH Lambda phage Vaccine SNS-301",
       "codigo_fuente": "C148522",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "38.33% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "61.67% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Paclitaxel Polymeric Micelle Formulation NANT-008",
@@ -691,7 +737,8 @@
       "confianza_prediccion": "62.10% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -712,7 +759,8 @@
       "confianza_prediccion": "19.85% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -724,7 +772,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Polymer-encapsulated Luteolin Nanoparticle",
@@ -733,7 +781,8 @@
       "confianza_prediccion": "18.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -745,7 +794,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Panobinostat Nanoparticle Formulation MTX110",
@@ -754,7 +803,8 @@
       "confianza_prediccion": "20.00% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.67
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -766,49 +816,53 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Platinum Acetylacetonate-Titanium Dioxide Nanoparticles",
       "codigo_fuente": "C153425",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "21.67% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "35.53% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.72
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Doxorubicin-loaded EGFR-targeting Nanocells",
       "codigo_fuente": "C154569",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "25.83% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "40.42% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Zirconium Zr 89-DFO-cRGDY PEG-Cy5-C' Dots",
@@ -817,7 +871,8 @@
       "confianza_prediccion": "60.60% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -838,7 +893,8 @@
       "confianza_prediccion": "44.00% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -860,7 +916,8 @@
       "confianza_prediccion": "34.10% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -873,7 +930,7 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nanoscale Coordination Polymer Nanoparticles CPI-100",
@@ -882,7 +939,8 @@
       "confianza_prediccion": "14.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -894,7 +952,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Cavrotolimod",
@@ -903,7 +961,8 @@
       "confianza_prediccion": "20.83% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -915,28 +974,30 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Cetuximab-loaded Ethylcellulose Polymeric Nanoparticles Decorated with Octreotide",
       "codigo_fuente": "C158083",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "39.50% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "63.65% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Atezolizumab/Nab-paclitaxel Regimen",
@@ -945,7 +1006,8 @@
       "confianza_prediccion": "47.25% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -966,7 +1028,8 @@
       "confianza_prediccion": "18.50% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -979,7 +1042,7 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Lipid Nanoparticle Encapsulated mRNAs Encoding Human IL-12A/IL-12B MEDI-1191",
@@ -988,7 +1051,8 @@
       "confianza_prediccion": "44.60% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1010,7 +1074,8 @@
       "confianza_prediccion": "44.00% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1032,7 +1097,8 @@
       "confianza_prediccion": "19.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1044,7 +1110,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Docetaxel Polymeric Micelles",
@@ -1053,7 +1119,8 @@
       "confianza_prediccion": "23.08% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa fluida con reorganización dinámica"
+        "orden_monocapa": "Monocapa fluida con reorganización dinámica",
+        "score_viabilidad": 0.25
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas",
@@ -1067,7 +1134,7 @@
         "Considerar coadyuvantes estabilizadores",
         "Validar temperatura de transición de fase"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Copper Cu 64 NOTA-PSMAi-PEG-Cy5.5-C' Dots",
@@ -1076,7 +1143,8 @@
       "confianza_prediccion": "41.17% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1097,7 +1165,8 @@
       "confianza_prediccion": "47.25% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1114,21 +1183,23 @@
     {
       "farmaco": "Pegylated SN-38 Conjugate PLX038",
       "codigo_fuente": "C167334",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "41.58% (Media)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "68.20% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.65
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
       "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
@@ -1139,7 +1210,8 @@
       "confianza_prediccion": "59.25% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1160,7 +1232,8 @@
       "confianza_prediccion": "27.42% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1172,7 +1245,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Lipid Nanoparticle Encapsulating Glutathione S-transferase P siRNA NBF-006",
@@ -1181,7 +1254,8 @@
       "confianza_prediccion": "34.10% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1194,7 +1268,7 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Encapsulated Rapamycin",
@@ -1203,7 +1277,8 @@
       "confianza_prediccion": "25.42% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1215,28 +1290,30 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Multi-antigen-directed Autologous T-cells NEXI-002",
       "codigo_fuente": "C174128",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "22.92% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "35.46% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Fenretinide Phospholipid Suspension ST-001",
@@ -1245,7 +1322,8 @@
       "confianza_prediccion": "25.42% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1257,7 +1335,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Cotsiranib",
@@ -1266,7 +1344,8 @@
       "confianza_prediccion": "19.17% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1278,28 +1357,30 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nanoparticle SN-38-encapsulated Micelle Formulation SNB-101",
       "codigo_fuente": "C178643",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "27.00% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "41.08% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Epstein-Barr Virus gp350-ferritin Nanoparticle Vaccine with Saponin-based Adjuvant",
@@ -1308,7 +1389,8 @@
       "confianza_prediccion": "16.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1320,7 +1402,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "miRNA 193a-3p Mimic INT-1B3",
@@ -1329,7 +1411,8 @@
       "confianza_prediccion": "44.60% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1351,7 +1434,8 @@
       "confianza_prediccion": "19.58% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1363,7 +1447,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "mRNA-encoded Anti-Claudin18.2 Monoclonal Antibody BNT141",
@@ -1372,7 +1456,8 @@
       "confianza_prediccion": "67.25% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1394,7 +1479,8 @@
       "confianza_prediccion": "33.50% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1407,7 +1493,7 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Ribocytokine IL-7 BNT152",
@@ -1416,7 +1502,8 @@
       "confianza_prediccion": "33.50% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1429,16 +1516,40 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Detalimogene Voraplasmid",
       "codigo_fuente": "C179685",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "62.40% (Media)",
+      "resultados": {
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.7
+      },
+      "recomendaciones": [
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
+      ],
+      "advertencias": [
+        "Ninguna advertencia crítica"
+      ],
+      "optimizaciones_sugeridas": [
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
+      ],
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
+    },
+    {
+      "farmaco": "delta9-Tetrahydrocannabinol/Cannabidiol Combination Agent",
+      "codigo_fuente": "C180409",
       "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "40.00% (Media)",
+      "confianza_prediccion": "17.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1453,34 +1564,14 @@
       "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
-      "farmaco": "delta9-Tetrahydrocannabinol/Cannabidiol Combination Agent",
-      "codigo_fuente": "C180409",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "17.50% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
       "farmaco": "CD122-selective IL-2/Anti-CD25 Antibody-like Fusion Protein ANV419",
       "codigo_fuente": "C180674",
       "regla_aplicada": "Liposomal RNA Complexation",
       "confianza_prediccion": "67.25% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1502,7 +1593,8 @@
       "confianza_prediccion": "40.42% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1519,32 +1611,12 @@
     {
       "farmaco": "Anti-TGF-beta 1/Anti-COX-2 siRNAs STP707",
       "codigo_fuente": "C184380",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "19.17% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Lipid Nanoparticle-encapsulated EBV mRNA Vaccine mRNA-1189",
-      "codigo_fuente": "C185869",
-      "regla_aplicada": "Liposomal RNA Complexation",
-      "confianza_prediccion": "34.10% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "29.08% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1557,28 +1629,53 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+    },
+    {
+      "farmaco": "Lipid Nanoparticle-encapsulated EBV mRNA Vaccine mRNA-1189",
+      "codigo_fuente": "C185869",
+      "regla_aplicada": "Liposomal RNA Complexation",
+      "confianza_prediccion": "34.10% (Baja)",
+      "resultados": {
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
+      },
+      "recomendaciones": [
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
+      ],
+      "advertencias": [
+        "Ninguna advertencia crítica"
+      ],
+      "optimizaciones_sugeridas": [
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
+      ],
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Pasifolate Exatecan",
       "codigo_fuente": "C187021",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "39.58% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "61.72% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Akt-1 Antisense Oligonucleotide WGI-0301",
@@ -1587,7 +1684,8 @@
       "confianza_prediccion": "20.83% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1599,7 +1697,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nanoparticle Formulation CPI-300",
@@ -1608,7 +1706,8 @@
       "confianza_prediccion": "18.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1620,28 +1719,30 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Polymeric Nanoparticle-conjugated Camptothecin DAN-222",
       "codigo_fuente": "C187116",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "16.17% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "26.51% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "mRNA-encoded Anti-CD3/Anti-CLDN6 Bispecific Antibody BNT142",
@@ -1650,7 +1751,8 @@
       "confianza_prediccion": "67.25% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1668,32 +1770,12 @@
     {
       "farmaco": "Lipid Nanoparticle Encapsulated MYC-targeting mRNA-based Agent OTX-2002",
       "codigo_fuente": "C190153",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "21.17% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
-      "farmaco": "Lipid Nanoparticle Encapsulated Self-replicating RNA Encoding Human IL-12 JCXH-211",
-      "codigo_fuente": "C190391",
-      "regla_aplicada": "Liposomal RNA Complexation",
-      "confianza_prediccion": "34.10% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "32.48% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1706,28 +1788,53 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+    },
+    {
+      "farmaco": "Lipid Nanoparticle Encapsulated Self-replicating RNA Encoding Human IL-12 JCXH-211",
+      "codigo_fuente": "C190391",
+      "regla_aplicada": "Liposomal RNA Complexation",
+      "confianza_prediccion": "34.10% (Baja)",
+      "resultados": {
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
+      },
+      "recomendaciones": [
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
+      ],
+      "advertencias": [
+        "Ninguna advertencia crítica"
+      ],
+      "optimizaciones_sugeridas": [
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
+      ],
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nab-paclitaxel/Danburstotug Complex AP160",
       "codigo_fuente": "C190739",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "38.75% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "62.38% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Copper 64 Cu-labeled Macrophage-targeted Nanoparticle",
@@ -1736,7 +1843,8 @@
       "confianza_prediccion": "12.75% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -1758,7 +1866,8 @@
       "confianza_prediccion": "21.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.67
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1770,7 +1879,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Dual-activating Polyvalent STING Agonist ONM-501",
@@ -1779,7 +1888,8 @@
       "confianza_prediccion": "25.83% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -1791,7 +1901,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Lipid Nanoparticle Encapsulated mRNA Encoding Human Single-chain IL-12 ABO2011",
@@ -1800,7 +1910,8 @@
       "confianza_prediccion": "44.60% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1818,44 +1929,48 @@
     {
       "farmaco": "PLZ4-coated Paclitaxel-loaded Micelle Formulation",
       "codigo_fuente": "C202862",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "34.08% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "54.44% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Cisplatin Nano-engineered Intraoperative System PRV211",
       "codigo_fuente": "C204213",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "17.92% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "26.18% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Autologous Total Tumor mRNA Loaded Liposome Vaccine",
@@ -1864,7 +1979,8 @@
       "confianza_prediccion": "59.28% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia"
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.93
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1886,7 +2002,8 @@
       "confianza_prediccion": "44.60% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1908,7 +2025,8 @@
       "confianza_prediccion": "34.10% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1921,28 +2039,30 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "MicroRNA-10b Antagomir-Iron Oxide/Dextran-based Nanoparticle TTX-MC138",
       "codigo_fuente": "C208344",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "21.25% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "34.85% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.72
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Lipid Nanoparticle Encapsulating Beta-catenin siRNA ALN-BCAT",
@@ -1951,7 +2071,8 @@
       "confianza_prediccion": "44.60% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -1969,23 +2090,25 @@
     {
       "farmaco": "Nanocurcumin",
       "codigo_fuente": "C211533",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "20.00% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "29.60% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nab-paclitaxel",
@@ -1994,7 +2117,8 @@
       "confianza_prediccion": "47.25% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2015,7 +2139,8 @@
       "confianza_prediccion": "14.58% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2027,7 +2152,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Jonsson Comprehensive Cancer Center",
@@ -2036,7 +2161,8 @@
       "confianza_prediccion": "5.00% (Baja)",
       "resultados": {
         "afinidad": "Afinidad no determinada",
-        "orden_monocapa": "Orden de monocapa no determinado"
+        "orden_monocapa": "Orden de monocapa no determinado",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "Requiere caracterización experimental adicional"
@@ -2048,7 +2174,7 @@
         "Medir zeta potential para determinar carga superficial",
         "Análisis de composición química del recubrimiento"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Datos insuficientes"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Nanoparticle-targeted Drug",
@@ -2057,7 +2183,8 @@
       "confianza_prediccion": "11.50% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -2079,7 +2206,8 @@
       "confianza_prediccion": "19.85% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2091,28 +2219,30 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "PEG-PEI-cholesterol Lipopolymer-encased IL-12 DNA Plasmid Vector IMNN-001",
       "codigo_fuente": "C49178",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "42.83% (Media)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "70.25% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Nanoparticle",
@@ -2121,7 +2251,8 @@
       "confianza_prediccion": "8.00% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -2143,7 +2274,8 @@
       "confianza_prediccion": "11.50% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -2165,7 +2297,8 @@
       "confianza_prediccion": "19.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2177,7 +2310,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Gadolinium-Chelate",
@@ -2186,7 +2319,8 @@
       "confianza_prediccion": "19.85% (Baja)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -2199,7 +2333,7 @@
         "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
         "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "CONDICIONAL - Validar estabilidad experimental"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nanobomb",
@@ -2208,7 +2342,8 @@
       "confianza_prediccion": "9.50% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -2230,7 +2365,8 @@
       "confianza_prediccion": "6.50% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -2252,7 +2388,8 @@
       "confianza_prediccion": "19.92% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2264,7 +2401,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Nanosphere",
@@ -2273,7 +2410,8 @@
       "confianza_prediccion": "8.00% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -2295,7 +2433,8 @@
       "confianza_prediccion": "59.25% (Media)",
       "resultados": {
         "afinidad": "Alta afinidad ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
         "Formulación ÓPTIMA para uso terapéutico",
@@ -2313,44 +2452,48 @@
     {
       "farmaco": "CHP-HER-2 Peptide Vaccine",
       "codigo_fuente": "C62597",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "32.50% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "51.75% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.9
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "CHP-NY-ESO-1 Peptide Vaccine IMF-001",
       "codigo_fuente": "C62598",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "32.50% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "51.75% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.9
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Vinorelbine Tartrate Emulsion",
@@ -2359,7 +2502,8 @@
       "confianza_prediccion": "19.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2371,28 +2515,30 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "SPIO Nanoparticle",
       "codigo_fuente": "C68566",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "40.83% (Media)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "65.92% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 1.0
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Nanoparticle Albumin-Bound Docetaxel",
@@ -2401,7 +2547,8 @@
       "confianza_prediccion": "48.60% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2418,65 +2565,71 @@
     {
       "farmaco": "Sirolimus Albumin-bound Nanoparticles",
       "codigo_fuente": "C74065",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "34.17% (Baja)",
+      "regla_aplicada": "Protein Carrier / Albumin-bound",
+      "confianza_prediccion": "60.13% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Transferrin Receptor-Targeted Anti-RRM2 siRNA CALAA-01",
       "codigo_fuente": "C78450",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "23.75% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "36.88% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Anti-KSP/Anti-VEGF siRNAs ALN-VSP02",
       "codigo_fuente": "C82391",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "20.42% (Baja)",
+      "regla_aplicada": "Targeted Biomolecule Interaction",
+      "confianza_prediccion": "31.21% (Baja)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.85
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Irinotecan Sucrosofate",
@@ -2485,7 +2638,8 @@
       "confianza_prediccion": "34.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.65
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2497,47 +2651,51 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Hsp90 Inhibitor AB-010",
       "codigo_fuente": "C82691",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "33.75% (Baja)",
+      "regla_aplicada": "Protein Carrier / Albumin-bound",
+      "confianza_prediccion": "59.40% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.8
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     },
     {
       "farmaco": "Demplatin Pegraglumer",
       "codigo_fuente": "C85476",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "41.67% (Media)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "68.33% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.65
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
       "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
@@ -2548,7 +2706,30 @@
       "confianza_prediccion": "42.00% (Media)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.7
+      },
+      "recomendaciones": [
+        "Formulación viable con optimizaciones recomendadas"
+      ],
+      "advertencias": [
+        "Monocapa requiere estabilización adicional"
+      ],
+      "optimizaciones_sugeridas": [
+        "Revisar ratio ligando:nanopartícula",
+        "Considerar coadyuvantes estabilizadores"
+      ],
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
+    },
+    {
+      "farmaco": "Protein Stabilized Liposomal Docetaxel Nanoparticles",
+      "codigo_fuente": "C90534",
+      "regla_aplicada": "Biomolecule Node",
+      "confianza_prediccion": "20.75% (Baja)",
+      "resultados": {
+        "afinidad": "Afinidad moderada ligando-nanopartícula",
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2563,34 +2744,14 @@
       "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
-      "farmaco": "Protein Stabilized Liposomal Docetaxel Nanoparticles",
-      "codigo_fuente": "C90534",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "20.75% (Baja)",
-      "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
-      },
-      "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
-      ],
-      "advertencias": [
-        "Monocapa requiere estabilización adicional"
-      ],
-      "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
-      ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
-    },
-    {
       "farmaco": "Oxaliplatin-Encapsulated Transferrin-Conjugated N-glutaryl Phosphatidylethanolamine Liposome",
       "codigo_fuente": "C91074",
       "regla_aplicada": "Biomolecule Node",
       "confianza_prediccion": "22.00% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.55
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2602,7 +2763,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Docetaxel-PNP",
@@ -2611,7 +2772,8 @@
       "confianza_prediccion": "18.50% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2623,7 +2785,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Quaratusugene Ozeplasmid",
@@ -2632,7 +2794,8 @@
       "confianza_prediccion": "35.83% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.7
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2644,7 +2807,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "PSMA-targeted Docetaxel Nanoparticles BIND-014",
@@ -2653,7 +2816,8 @@
       "confianza_prediccion": "40.00% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "orden_monocapa": "Monocapa altamente ordenada",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2665,7 +2829,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "Paclitaxel Injection Concentrate for Nanodispersion",
@@ -2674,7 +2838,8 @@
       "confianza_prediccion": "8.00% (Baja)",
       "resultados": {
         "afinidad": "Baja afinidad ligando-nanopartícula",
-        "orden_monocapa": "none"
+        "orden_monocapa": "none",
+        "score_viabilidad": 0.0
       },
       "recomendaciones": [
         "NO RECOMENDADO para producción sin modificaciones"
@@ -2696,7 +2861,8 @@
       "confianza_prediccion": "28.25% (Baja)",
       "resultados": {
         "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa estable con orden estructurado"
+        "orden_monocapa": "Monocapa estable con orden estructurado",
+        "score_viabilidad": 0.5
       },
       "recomendaciones": [
         "Formulación viable con optimizaciones recomendadas"
@@ -2708,28 +2874,30 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
     },
     {
       "farmaco": "SNS01-T Nanoparticles",
       "codigo_fuente": "C98288",
-      "regla_aplicada": "Biomolecule Node",
-      "confianza_prediccion": "32.92% (Baja)",
+      "regla_aplicada": "General Nucleic Acid (DNA/Oligo)",
+      "confianza_prediccion": "50.78% (Media)",
       "resultados": {
-        "afinidad": "Afinidad moderada ligando-nanopartícula",
-        "orden_monocapa": "Monocapa altamente ordenada"
+        "afinidad": "Alta afinidad ligando-nanopartícula",
+        "orden_monocapa": "Monocapa semi-ordenada con estabilidad intermedia",
+        "score_viabilidad": 0.7
       },
       "recomendaciones": [
-        "Formulación viable con optimizaciones recomendadas"
+        "Formulación ÓPTIMA para uso terapéutico",
+        "Proceder con ensayos de caracterización y estabilidad"
       ],
       "advertencias": [
-        "Monocapa requiere estabilización adicional"
+        "Ninguna advertencia crítica"
       ],
       "optimizaciones_sugeridas": [
-        "Revisar ratio ligando:nanopartícula",
-        "Considerar coadyuvantes estabilizadores"
+        "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+        "Confirmar reproducibilidad del autoensamblaje en lotes"
       ],
-      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia limitada"
+      "decision_produccion": "APROBADO para producción - Proceder con validación de lotes"
     }
   ]
 }

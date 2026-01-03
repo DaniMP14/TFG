@@ -35,11 +35,52 @@ def confidence_adjustment(current_conf: float, input_case: Dict[str, Any]) -> fl
     return min(conf, 0.99)
 
 
+# --- Reglas de Consenso (Score Boosters) ---
+
+def _consensus_electrostatic(inp: Dict[str, Any]) -> float:
+    """Regla C1 — Consenso electrostático fuerte"""
+    np_charge = inp.get("nanoparticle", {}).get("surface_charge")
+    biom_type = inp.get("biomolecule", {}).get("type")
+
+    if np_charge == "positive" and biom_type in ["DNA", "RNA"]:
+        return 0.15
+    return 0.0
+
+def _consensus_material_biomolecule(inp: Dict[str, Any]) -> float:
+    """Regla C2 — Consenso material–biomolécula"""
+    np_type = inp.get("nanoparticle", {}).get("type")
+    biom_type = inp.get("biomolecule", {}).get("type")
+
+    if np_type == "metallic" and biom_type in ["DNA", "RNA", "protein"]:
+        return 0.12
+
+    if np_type in ["lipid-based", "liposomal"] and biom_type == "RNA":
+        return 0.18
+    return 0.0
+
+def _consensus_encapsulation(inp: Dict[str, Any]) -> float:
+    """Regla C3 — Consenso encapsulación conocida"""
+    surf = inp.get("surface", {}).get("material")
+    biom = inp.get("biomolecule", {}).get("type")
+
+    if surf in ["peg", "polymer"] and biom in ["DNA", "RNA"]:
+        return 0.10
+    return 0.0
+
+def _consensus_context(inp: Dict[str, Any]) -> float:
+    """Regla C3 (Contexto) — Refuerzo contextual"""
+    name = inp.get("context", {}).get("display_name", "").lower()
+    keywords = ["in vivo", "clinical", "approved", "therapeutic"]
+    if any(k in name for k in keywords):
+        return 0.08
+    return 0.0
+
+
 def compute_support_score(result: Dict[str, Any], input_case: Optional[Dict[str, Any]]) -> float:
     """
     Calcula un score de viabilidad para producción (0.0 - 1.0).
     Combina la calidad de la predicción (afinidad/monocapa) con 
-    características deseables del material (tipo de ligando/NP).
+    características deseables del material y reglas de consenso.
     """
     score = 0.0
 
@@ -64,18 +105,29 @@ def compute_support_score(result: Dict[str, Any], input_case: Optional[Dict[str,
     elif monolayer in ["partial", "semi-ordered"]:
         score += 0.15
 
-    # 3. Refuerzos semánticos del input (Max 0.2)
+    # 3. Refuerzos semánticos y Consenso (Max variable, cap en 1.0)
     if input_case:
         ligand_type = input_case.get("ligand", {}).get("type", "")
         np_type = input_case.get("nanoparticle", {}).get("type", "")
 
-        # Ligandos biológicos o estabilizadores conocidos
+        # Base legacy (reducido para dar peso al consenso)
         if ligand_type in ["antibody", "peptide", "peg", "protein"]:
-            score += 0.1
-
-        # Núcleos bien caracterizados
+            score += 0.05
         if np_type in ["metallic", "lipid-based", "gold", "silver"]:
-            score += 0.1
+            score += 0.05
+
+        # --- NUEVAS REGLAS DE CONSENSO ---
+        # Capa 1: Consenso Estructural
+        score += _consensus_electrostatic(input_case)
+        score += _consensus_material_biomolecule(input_case)
+        score += _consensus_encapsulation(input_case)
+        
+        # Capa 3: Contexto
+        score += _consensus_context(input_case)
+
+    # Capa 2: Coherencia Interna (No depende de input_case)
+    if affinity == "high" and monolayer in ["ordered", "stable"]:
+        score += 0.10
 
     return min(score, 1.0)
 
@@ -230,114 +282,6 @@ def _decision_produccion(affinity: str, monolayer: str, confidence: float, score
     return "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
 
 
-
-
-def generate_batch_report(predictions_path: str, output_path: str):
-    """
-    Genera reporte completo desde archivo de predicciones JSONL.
-    
-    Args:
-        predictions_path: ruta al archivo rdr_predictions_vX.jsonl
-        output_path: ruta donde guardar el reporte legible
-    """
-    with open(predictions_path, 'r', encoding='utf-8') as f:
-        predictions = [json.loads(line) for line in f if line.strip()]
-    
-    reports = []
-    stats = {
-        "aprobados": 0,
-        "condicionales": 0,
-        "rechazados": 0,
-        "requieren_validacion": 0
-    }
-    
-    for pred in predictions:
-        context = pred.get("context", {})
-        prediction = pred.get("prediction", {})
-        
-        # Manejar multi-resultado (evaluate_all)
-        if prediction.get("multi"):
-            # Tomar el primer resultado (mejor match)
-            results = prediction.get("results", [])
-            if results:
-                prediction = results[0]
-            else:
-                prediction = {}
-        
-        # Pasamos 'pred' como full_case porque contiene nanoparticle, ligand, etc.
-        report = generate_recommendation(prediction, context, full_case=pred)
-        reports.append(report)
-        
-        # Estadísticas
-        decision = report["decision_produccion"]
-        if "APROBADO" in decision:
-            stats["aprobados"] += 1
-        elif "CONDICIONAL" in decision or "VIABLE" in decision:
-            stats["condicionales"] += 1
-        elif "NO APROBADO" in decision:
-            stats["rechazados"] += 1
-        else:
-            stats["requieren_validacion"] += 1
-    
-    # Guardar reporte completo
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write("=" * 80 + "\n")
-        f.write("REPORTE DE DECISIÓN - SISTEMA RDR NANOFARMACOLOGÍA\n")
-        f.write("=" * 80 + "\n\n")
-        
-        f.write(f"Total de fármacos analizados: {len(reports)}\n")
-        f.write(f"Aprobados: {stats['aprobados']}\n")
-        f.write(f"Condicionales/Viables: {stats['condicionales']}\n")
-        f.write(f"Rechazados: {stats['rechazados']}\n")
-        f.write(f"Requieren validación: {stats['requieren_validacion']}\n")
-        f.write("\n" + "=" * 80 + "\n\n")
-        
-        for i, report in enumerate(reports, 1):
-            f.write(f"\n{'─' * 80}\n")
-            f.write(f"FÁRMACO #{i}: {report['farmaco']}\n")
-            f.write(f"{'─' * 80}\n")
-            f.write(f"Código NCIt: {report['codigo_fuente']}\n")
-            f.write(f"Regla aplicada: {report['regla_aplicada']}\n")
-            f.write(f"Confianza: {report['confianza_prediccion']}\n\n")
-            
-            f.write(f"RESULTADOS:\n")
-            f.write(f"  - Afinidad: {report['resultados']['afinidad']}\n")
-            f.write(f"  - Monocapa: {report['resultados']['orden_monocapa']}\n")
-            f.write(f"  - Score Viabilidad: {report['resultados'].get('score_viabilidad', 'N/A')}\n\n")
-            
-            f.write(f"RECOMENDACIONES:\n")
-            for rec in report['recomendaciones']:
-                f.write(f"  {rec}\n")
-            f.write("\n")
-            
-            f.write(f"ADVERTENCIAS:\n")
-            for warn in report['advertencias']:
-                f.write(f"  {warn}\n")
-            f.write("\n")
-            
-            f.write(f"OPTIMIZACIONES SUGERIDAS:\n")
-            for opt in report['optimizaciones_sugeridas']:
-                f.write(f"  - {opt}\n")
-            f.write("\n")
-            
-            f.write(f"DECISIÓN DE PRODUCCIÓN:\n")
-            f.write(f"  >>> {report['decision_produccion']} <<<\n")
-            f.write("\n")
-    
-    # Guardar también versión JSON estructurada
-    json_output = output_path.replace('.txt', '.json')
-    with open(json_output, 'w', encoding='utf-8') as f:
-        json.dump({
-            "estadisticas": stats,
-            "reportes": reports
-        }, f, ensure_ascii=False, indent=2)
-    
-    print(f"Reporte generado: {output_path}")
-    print(f"Versión JSON: {json_output}")
-    print(f"\nResumen: {stats['aprobados']} aprobados, {stats['condicionales']} condicionales, "
-          f"{stats['rechazados']} rechazados, {stats['requieren_validacion']} requieren validación")
-
-
 def generate_single_drug_report(drug_input: Dict[str, Any]) -> str:
     """
     Genera reporte para un único fármaco (uso en producción).
@@ -397,13 +341,5 @@ RECOMENDACIONES:
     return output
 
 
-def main():
-    """Genera reporte desde las predicciones v4."""
-    predictions_path = r"rdr_predictions_v4.jsonl"
-    output_path = r"reporte_decisiones_v4.txt"
-    
-    generate_batch_report(predictions_path, output_path)
-
-
 if __name__ == '__main__':
-    main()
+    pass
