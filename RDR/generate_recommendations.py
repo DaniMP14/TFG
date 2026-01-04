@@ -270,6 +270,10 @@ def _decision_produccion(affinity: str, monolayer: str, confidence: float, score
     if affinity == "low" or monolayer == "unstable":
         return "NO APROBADO - Rediseño necesario"
 
+    # Caso excelente: score máximo con umbral de confianza relajado
+    if score >= 0.9 and confidence >= 0.3:
+        return "APROBADO para producción - Proceder con validación de lotes"
+
     # Caso fuerte: score alto y confianza suficiente
     if score >= 0.7 and confidence >= 0.4:
         return "APROBADO para producción - Proceder con validación de lotes"
