@@ -6,7 +6,7 @@ import mysql.connector
 df = pd.read_csv("../datasets/dataset_FINAL2.csv")
 
 # Conectarse a MySQL
-# contraseña solicitada de forma segura
+# Si se quiere usar: cambiar con las credenciales adecuadas para tu entorno
 conn = mysql.connector.connect(
     host="localhost",
     user="root",

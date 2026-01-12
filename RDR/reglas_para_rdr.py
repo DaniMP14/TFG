@@ -111,7 +111,6 @@ def attach_rules(root: Any) -> None:
         action=lambda inp: {"predicted_affinity": "high", "monolayer_order": "stable", "rule_confidence": 0.88}
     )
 
-    # TODO: comprobar si añadimos RNA antes de acabar con el RDR
     rule_nucleic_acid_general = GRDRRule(
         name="General Nucleic Acid (DNA/Oligo)",
         condition=lambda inp: inp.get("biomolecule", {}).get("type") in ["DNA", "plasmid", "oligonucleotide", "nucleic acid", "aptamer"] and inp.get("nanoparticle", {}).get("type") not in ["lipid-based"],

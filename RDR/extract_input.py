@@ -7,10 +7,6 @@ Características:
 - Heurísticas biomédicas ampliadas (nanopartículas, ligandos, biomoléculas, entorno).
 - Estandarización de vocabulario para interoperabilidad.
 - Salida reproducible para hacer inferencias.
-
-Uso:
-    from extract_input import load_and_convert
-    inputs = load_and_convert("../datasets/dataset_FINAL2.csv")
 """
 
 from typing import Dict, Any, Tuple, List
@@ -20,7 +16,7 @@ import pandas as pd
 
 
 # ──────────────────────────────────────────────────────────────
-# 🔹 UTILIDADES BÁSICAS
+# UTILIDADES BÁSICAS
 # ──────────────────────────────────────────────────────────────
 def _norm(text: Any) -> str:
     if pd.isna(text) or text is None:
@@ -33,7 +29,7 @@ def _combine(*parts: str) -> str:
 
 
 # ──────────────────────────────────────────────────────────────
-# 🔹 INFERENCIA SEMÁNTICA
+# INFERENCIA SEMÁNTICA
 # ──────────────────────────────────────────────────────────────
 LIPID_NP_KEYWORDS = {
     "high_conf": {
@@ -303,7 +299,7 @@ def infer_np_type(display_name: str, synonyms: str, definition: str) -> Tuple[st
 
 
 # Precompilados y patrones para inferencia de carga
-# Regex refinado para zeta potential (evita falsos positivos con códigos de producto) - NO APARECE EN EL TESAURO DE NCIt
+# Regex refinado para zeta potential (evita falsos positivos con códigos de producto) - NO APARECEN ZETAS EN EL TESAURO DE NCIt
 _ZETA_RE = re.compile(r"zeta\s*potential[^.,]{0,30}?([+\-]\d+(?:[.,]\d+)?)\s*m?v\b", flags=re.IGNORECASE)
 _HIGH_POS_RE = re.compile(r"\b(cationic|positively\s*charged|positive\s*charge|\+\s?charge)\b", flags=re.IGNORECASE)
 _HIGH_NEG_RE = re.compile(r"\b(anionic|negatively\s*charged|negative\s*charge|\-\s?charge)\b", flags=re.IGNORECASE)
@@ -459,7 +455,7 @@ def infer_charge(display_name: str, definition: str, concept_subset: str) -> Tup
     return "unknown", 0.0, "none"
 
 # ──────────────────────────────────────────────────────────────
-# 🔹 INFERENCIA DE SUSTRATO/ENTORNO (para surface.charge independiente)
+# INFERENCIA DE SUSTRATO/ENTORNO (para surface.charge independiente)
 # ──────────────────────────────────────────────────────────────
 _SUBSTRATE_GLASS_RE = re.compile(r"\b(glass|silicon|silica substrate|quartz|sio2 surface)\b", re.IGNORECASE)
 _SUBSTRATE_PLASTIC_RE = re.compile(r"\b(plastic|polystyrene|petri dish|cell culture plate)\b", re.IGNORECASE)
@@ -555,7 +551,6 @@ def infer_surface_charge(
     return "unknown", 0.0, "propagated_from_nanoparticle:none"
 
 
-# TODO: consistencia carga ligando <-> carga superficie - PARA VERSIÓN 5? Junto con el fallback de targeting (es muy vago)
 def infer_ligand_properties(display_name: str, synonyms: str, definition: str) -> Dict[str, Any]:
     s = _combine(display_name, synonyms, definition)
     type = {"type": "unknown", "type_confidence": 0.0, "type_provenance": "none"}
@@ -729,7 +724,7 @@ def infer_surface_material(
 
 
 # ──────────────────────────────────────────────────────────────
-# 🔹 CONSTRUCCIÓN DEL INPUT
+# CONSTRUCCIÓN DEL INPUT
 # ──────────────────────────────────────────────────────────────
 def row_to_input(row: pd.Series) -> Dict[str, Any]:
     # obtener display name preferentemente; si está vacío, usar primer sinónimo si existe
@@ -799,7 +794,7 @@ def row_to_input(row: pd.Series) -> Dict[str, Any]:
 
 
 # ──────────────────────────────────────────────────────────────
-# 🔹 CARGA Y EXPORTACIÓN
+# CARGA Y EXPORTACIÓN
 # ──────────────────────────────────────────────────────────────
 def load_and_convert(path: str, n: int = None, save_jsonl: str = None) -> List[Dict[str, Any]]:
     df = pd.read_csv(path, encoding='utf-8')
@@ -818,7 +813,7 @@ def load_and_convert(path: str, n: int = None, save_jsonl: str = None) -> List[D
 
 
 # ──────────────────────────────────────────────────────────────
-# 🔹 EJECUCIÓN DIRECTA
+# EJECUCIÓN DIRECTA
 # ──────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     out = load_and_convert("../datasets/dataset_FINAL2.csv", save_jsonl="ins/rdr_inputs_v4.jsonl")
