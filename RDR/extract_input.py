@@ -697,7 +697,7 @@ def infer_surface_material(
         re.IGNORECASE
     )
     if m:
-        # Mapeo de términos detectados → valores estandarizados - HACE FALTA?
+        # Mapeo de términos detectados → valores estandarizados
         material_mapping = {
             "peg": "peg", "polyethylene": "peg", "pegylated": "peg", "polyethylene glycol": "peg",
             "albumin": "albumin", "protein": "protein",

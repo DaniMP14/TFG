@@ -226,8 +226,8 @@ class RDRApp:
                 lines.append(f"  Score Viabilidad: {res.get('score_viabilidad', 'N/A')}")
                 lines.append("")
                 
-                lines.append("RECOMENDACIONES:")
-                for rec in rep.get('recomendaciones', []):
+                lines.append("COMENTARIOS:")
+                for rec in rep.get('comentarios', []):
                     lines.append(f"  {rec}")
                 lines.append("")
                 

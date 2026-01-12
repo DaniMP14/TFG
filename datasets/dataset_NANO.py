@@ -56,3 +56,12 @@ df_onco.to_csv("dataset_FINAL.csv", index=False)
 df_onco.to_excel("dataset_FINAL.xlsx", index=False)
 
 print(f"Filas seleccionadas: {df_onco.shape[0]}")
+
+# tercera reducción manual para eliminar términos no relevantes
+df3 = pd.read_csv("dataset_FINAL.csv")
+
+rows_to_remove = list(range(56, 64)) + list(range(68, 70)) + [81] + list(range(89, 93)) + list(range(96, 98)) + [99, 101, 105, 140]
+df3 = df3.drop(rows_to_remove)
+
+df3.to_csv("dataset_FINAL2.csv", index=False)
+df3.to_excel("dataset_FINAL2.xlsx", index=False)

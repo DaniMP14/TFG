@@ -179,6 +179,7 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any],
     monolayer_interpretation = {
         "stable": "Monocapa estable con orden estructurado",
         "semi-ordered": "Monocapa semi-ordenada con estabilidad intermedia",
+        "partial": "Monocapa parcial con cobertura incompleta",
         "ordered": "Monocapa altamente ordenada",
         "fluid": "Monocapa fluida con reorganización dinámica",
         "disordered": "Monocapa desordenada",
@@ -193,10 +194,30 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any],
     
     # Lógica de recomendaciones basada en afinidad y orden
     if affinity == "high" and monolayer in ["stable", "ordered", "semi-ordered"]:
-        recommendations.append("Formulación ÓPTIMA para uso terapéutico")
+        recommendations.append("Formulación prometedora desde el punto de vista de afinidad y organización superficial")
         recommendations.append("Proceder con ensayos de caracterización y estabilidad")
-        optimizations.append("Validar tiempo de vida útil (shelf-life) a temperatura controlada")
-        optimizations.append("Confirmar reproducibilidad del autoensamblaje en lotes")
+        optimizations.extend([
+            "Validar tiempo de vida útil (shelf-life) a temperatura controlada",
+            "Confirmar reproducibilidad del autoensamblaje en lotes"
+        ])
+        
+        # Optimizaciones específicas por contexto
+        if full_case:
+            biomolecule = full_case.get("biomolecule", {}).get("type", "").lower()
+            np_type = full_case.get("nanoparticle", {}).get("type", "").lower()
+            surface_material = full_case.get("surface", {}).get("material", "").lower()
+            
+            if biomolecule in ["rna", "dna"]:
+                optimizations.append("Evaluar integridad de la biomolécula tras encapsulación y almacenamiento")
+            
+            if "lipid" in rule_name.lower() or np_type == "lipid-based":
+                optimizations.append("Validar temperatura de transición de fase lipídica (Tm)")
+            
+            if surface_material == "peg":
+                optimizations.append("Evaluar posible efecto de escudo estérico (PEG shielding) en biodisponibilidad")
+            
+            if np_type == "metallic":
+                optimizations.append("Evaluar agregación y oxidación superficial bajo condiciones fisiológicas")
         
     elif affinity == "high" and monolayer in ["fluid", "disordered"]:
         recommendations.append("Alta afinidad pero estructura de monocapa subóptima")
@@ -250,7 +271,7 @@ def generate_recommendation(prediction: Dict[str, Any], context: Dict[str, Any],
             "orden_monocapa": monolayer_interpretation.get(monolayer, monolayer),
             "score_viabilidad": round(support_score, 2)
         },
-        "recomendaciones": recommendations,
+        "comentarios": recommendations,
         "advertencias": warnings if warnings else ["Ninguna advertencia crítica"],
         "optimizaciones_sugeridas": optimizations if optimizations else ["No se requieren optimizaciones adicionales"],
         "decision_produccion": _decision_produccion(affinity, monolayer, combined_conf, support_score)
@@ -326,9 +347,9 @@ RESULTADOS:
   Monocapa: {report['resultados']['orden_monocapa']}
   Score Viabilidad: {report['resultados'].get('score_viabilidad', 'N/A')}
 
-RECOMENDACIONES:
+COMENTARIOS:
 """
-    for rec in report['recomendaciones']:
+    for rec in report['comentarios']:
         output += f"  {rec}\n"
     
     output += "\nADVERTENCIAS:\n"

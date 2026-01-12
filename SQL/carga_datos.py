@@ -3,7 +3,7 @@ import getpass
 import mysql.connector
 
 # Leer el CSV
-df = pd.read_csv("../datasets/tesauro_filtrado.csv")
+df = pd.read_csv("../datasets/dataset_FINAL2.csv")
 
 # Conectarse a MySQL
 # contraseña solicitada de forma segura
