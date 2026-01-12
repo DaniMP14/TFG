@@ -102,7 +102,7 @@ class RDRApp:
         lbl_full = ttk.Label(frame_full, text="Generate Full Report (dataset_FINAL2.csv)", font=("Segoe UI", 12))
         lbl_full.pack(pady=(0, 10))
         
-        desc_full = ttk.Label(frame_full, text="This will evaluate all entries in the dataset and generate a JSON report similar to rdr_reporte_INICIAL.json.\nThis process may take a moment.", wraplength=600)
+        desc_full = ttk.Label(frame_full, text="This will evaluate all entries in the dataset and generate a JSON report.\nThis process may take a moment.", wraplength=600)
         desc_full.pack(pady=(0, 20))
         
         btn_full = ttk.Button(frame_full, text="Run Full Evaluation", command=self.start_full_evaluation_thread)
