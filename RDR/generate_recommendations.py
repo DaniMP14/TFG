@@ -299,11 +299,11 @@ def _decision_produccion(affinity: str, monolayer: str, confidence: float, score
     if score >= 0.7 and confidence >= 0.4:
         return "APROBADO para producción - Proceder con validación de lotes"
 
-    # Caso razonable pero incompleto
-    if score >= 0.45:
+    # Caso razonable pero incompleto (requiere confianza mínima)
+    if score >= 0.45 and confidence >= 0.2:
         return "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
 
-    # Caso débil
+    # Caso débil (baja confianza o score muy bajo)
     return "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
 
 

@@ -1,9 +1,9 @@
 {
   "estadisticas": {
     "aprobados": 42,
-    "condicionales": 74,
+    "condicionales": 47,
     "rechazados": 9,
-    "requieren_validacion": 3
+    "requieren_validacion": 30
   },
   "reportes": [
     {
@@ -170,7 +170,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Patisiran",
@@ -262,7 +262,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Nanoparticle-based Paclitaxel Suspension",
@@ -284,7 +284,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Nanocell-encapsulated miR-16-based microRNA Mimic",
@@ -306,7 +306,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Docetaxel-loaded Nanopharmaceutical CRLX301",
@@ -328,7 +328,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Docetaxel Nanoparticle CPC634",
@@ -445,7 +445,7 @@
         "Confirmar reproducibilidad del autoensamblaje en lotes",
         "Evaluar agregación y oxidación superficial bajo condiciones fisiológicas"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Nab-paclitaxel/Rituximab-coated Nanoparticle AR160",
@@ -490,7 +490,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Ceramide Nanoliposome",
@@ -512,7 +512,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Adenovirus-expressing TLR5/TLR5 Agonist Nanoformulation M-VM3",
@@ -534,7 +534,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Anti-EphA2 Antibody-directed Liposomal Docetaxel Prodrug MM-310",
@@ -580,7 +580,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Micellar Nanoparticle-encapsulated Epirubicin",
@@ -793,7 +793,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Polymer-encapsulated Luteolin Nanoparticle",
@@ -815,7 +815,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Panobinostat Nanoparticle Formulation MTX110",
@@ -980,7 +980,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Cavrotolimod",
@@ -1071,7 +1071,7 @@
         "Confirmar reproducibilidad del autoensamblaje en lotes",
         "Evaluar agregación y oxidación superficial bajo condiciones fisiológicas"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Lipid Nanoparticle Encapsulated mRNAs Encoding Human IL-12A/IL-12B MEDI-1191",
@@ -1143,7 +1143,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Docetaxel Polymeric Micelles",
@@ -1394,7 +1394,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Nanoparticle SN-38-encapsulated Micelle Formulation SNB-101",
@@ -1440,7 +1440,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "miRNA 193a-3p Mimic INT-1B3",
@@ -1487,7 +1487,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "mRNA-encoded Anti-Claudin18.2 Monoclonal Antibody BNT141",
@@ -1608,7 +1608,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "CD122-selective IL-2/Anti-CD25 Antibody-like Fusion Protein ANV419",
@@ -1772,7 +1772,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Polymeric Nanoparticle-conjugated Camptothecin DAN-222",
@@ -2226,7 +2226,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Jonsson Comprehensive Cancer Center",
@@ -2293,7 +2293,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "PEG-PEI-cholesterol Lipopolymer-encased IL-12 DNA Plasmid Vector IMNN-001",
@@ -2386,7 +2386,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Gadolinium-Chelate",
@@ -2410,7 +2410,7 @@
         "Confirmar reproducibilidad del autoensamblaje en lotes",
         "Evaluar agregación y oxidación superficial bajo condiciones fisiológicas"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Nanobomb",
@@ -2478,7 +2478,7 @@
         "Revisar ratio ligando:nanopartícula",
         "Considerar coadyuvantes estabilizadores"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Nanosphere",
@@ -2596,7 +2596,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "SPIO Nanoparticle",
@@ -2871,7 +2871,7 @@
         "Aumentar concentración de ligando para mejorar cobertura",
         "Probar modificaciones químicas del ligando (PEGylation, acetilación)"
       ],
-      "decision_produccion": "VIABLE CON OPTIMIZACIONES - Implementar mejoras sugeridas"
+      "decision_produccion": "REQUIERE VALIDACIÓN EXPERIMENTAL - Evidencia insuficiente"
     },
     {
       "farmaco": "Quaratusugene Ozeplasmid",
